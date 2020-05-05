@@ -1,0 +1,15 @@
+@charset "utf-8";
+$fullhd-enabled: false;
+
+$primary: #0E4C92;
+
+// If need, change your variables before importing Bulma
+$body-family: 'Roboto', sans-serif, serif;
+
+@import "~bulma/bulma.sass";
+.is-vertical-center {
+  align-items: center !important;
+}
+.is-horizontal-center {
+  justify-content: center !important;
+}
