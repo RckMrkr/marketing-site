@@ -7,7 +7,7 @@ export default () => {
         hero: file(relativePath: { eq: "integration-hero.png" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

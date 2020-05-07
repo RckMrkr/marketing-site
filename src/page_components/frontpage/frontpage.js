@@ -11,7 +11,7 @@ const Frontpage = ({ location }) => {
         desktop: file(relativePath: { eq: "hero.png" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 4160) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
