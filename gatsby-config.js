@@ -4,7 +4,7 @@ module.exports = {
     description: `Here to help with any technology obstacle you may face`,
     author: `InterOps`,
   },
-  pathPrefix: 'wip',
+  pathPrefix: '/wip',
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
