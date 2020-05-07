@@ -1,23 +1,65 @@
 import React from "react"
 import PageLayout from "../../components/pageLayout"
 import useEloomiIntegrations from './hooks';
-import DoubleTile from '../../components/doubleTile'
-import styles from './eloomi-integrations.module.css';
+import Tiles from '../../components/tiles'
+import './eloomi-integrations.css';
+import TextTile from "../../components/textTile";
+import ImageTile from "../../components/imageTile";
+import Slider from 'react-animated-slider';
+
+const slides = [
+  { title: 'Identify internal stakeholders', description: 'Lorem ipsum'},
+  { title: 'Receive API credentials and access to test platform', description: 'Lorem ipsum'},
+  { title: 'Identify how to receive/extract data from existing system', description: 'Lorem ipsum'},
+  { title: 'Discuss and decide on data to be transferred to eloomi', description: 'Lorem ipsum'},
+  { title: 'Integration', description: 'Lorem ipsum'},
+  { title: 'Acceptance test', description: 'Lorem ipsum'},
+  { title: 'Migration to production', description: 'Lorem ipsum'},
+  { title: 'Monitor', description: 'Lorem ipsum'},
+];
 
 const EloomiIntegrations = ({ location }) => {
-  const { hero, eloomiLogo } = useEloomiIntegrations();
+  const sliderClass = 'slider'
+  const { hero, eloomiLogo } = useEloomiIntegrations(sliderClass);
   return (
-    <PageLayout location={location} hero={hero} title='eloomi intergrations and monitoring' subtitle='InterOps is the official integration partner for eloomi'>
+    <PageLayout location={location} hero={hero} title='eloomi' subtitle='InterOps is the official integration partner for eloomi'>
       <section className="section">
         <div className="container">
-          <DoubleTile textClasses={['notification', 'is-primary', styles.isPadded, 'is-size-4']} imageProps={eloomiLogo} imageBackground='#0030c0'>
-            <p>InterOps is the official integration partner for eloomi. That that is not something that happens by chance.</p>
-          </DoubleTile>
-          <DoubleTile reverse textClasses={['notification', 'is-primary']} imageProps={eloomiLogo} imageBackground='#0030c0'>
-            <p style={{marginBottom: '20px'}}>We have not only built a lot of integrations to eloomi already, we also know what you are talking about when you mention eloomi specific words such as users, budgets, courses or skills. You do not need to spend your time teaching us. You can use your time better than that.</p>
-            <p>Besides intricate knowledge of the system, we also have the process down to a science. The overall steps can be found below.</p>
-            <p>At InterOps we are also able to host the integration, meaning that you will not have to find a server or an IT guy to figure out how and where the actual code should run. We can take care of that part too. If you prefer to have it in house, we can make sure to handover the code to your IT department, so they are in a good state to keep it running.</p>
-          </DoubleTile>
+          <Tiles>
+            <TextTile textClasses={['notification', 'is-primary', 'is-padded', 'is-size-4']}>
+              <p>You should not have to teach your vendor how eloomi works</p>
+            </TextTile>
+            <ImageTile imageProps={eloomiLogo} imageBackground='#0030c0' />
+          </Tiles>
+          <Tiles>
+            <ImageTile imageProps={eloomiLogo} imageBackground='#0030c0' />
+            <TextTile textClasses={['notification', 'is-white', 'is-size-4']}>
+              <p>You have a lot of things to do. Teaching your integration partner how eloomi works should not be one of them. At InterOps we have worked extensively with the platform and know how both the APIs and the actual platform works.</p>
+            </TextTile>
+          </Tiles>
+        </div>
+      </section>
+      <section className="section section--alt">
+        <div className="container has-text-centered">
+          <h3 className="is-size-3">We got the integration process down to a science</h3>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <Tiles>
+            <TextTile textClasses={['notification', 'is-primary', 'is-padded', 'is-size-4']}>
+              <p>You should not have to teach your vendor how eloomi works</p>
+            </TextTile>
+            <TextTile textClasses={['notification', 'is-primary']}>
+            <Slider onSlideChange={event => console.log(event)} duration={200} infinite={false}>
+              {slides.map((slide, index) => <div className='slide' key={index}>
+                <h2 className="is-size-4">{slide.title}</h2>
+                <hr />
+                <div>{slide.description}</div>
+              </div>)}
+            </Slider>
+            </TextTile>
+          </Tiles>
         </div>
       </section>
     </PageLayout>

@@ -1,0 +1,36 @@
+@import '~react-animated-slider/build/horizontal.css';
+.slide.animateIn,
+.slide.animateOut {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.slider a.previousButton {
+  left: 0;
+}
+
+.slider a.nextButton {
+  right: 0
+}
+
+.slider svg polygon{
+  fill: #FFF;
+  transition: opacity 0ms ease;
+  transition-delay: 0.2s;
+}
+
+.slider .disabled svg polygon{
+  opacity: 0;
+}
+
+.notification {
+  padding-right: 1.5rem
+}
+
+.is-padded {
+  padding: 15%;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}

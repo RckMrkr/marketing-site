@@ -6,23 +6,13 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Footer from './components/footer';
 import Header from "./components/header"
 
-const Layout = ({ children, location, hero }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout = ({ children, location }) => {
   return (
     <>
-      <Header />
+      <Header location={location} />
       {children}
       <Footer />
     </>

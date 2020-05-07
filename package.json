@@ -7,6 +7,7 @@
   "dependencies": {
     "@creativebulma/bulma-divider": "^1.1.0",
     "bulma": "^0.8.2",
+    "bulma-carousel": "^4.0.4",
     "classname": "0.0.0",
     "gatsby": "^2.20.35",
     "gatsby-background-image": "^1.1.1",
@@ -22,6 +23,7 @@
     "node-sass": "^4.14.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-animated-slider": "^2.0.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0"
   },

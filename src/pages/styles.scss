@@ -3,13 +3,28 @@ $fullhd-enabled: false;
 
 $primary: #0E4C92;
 
-// If need, change your variables before importing Bulma
+$title-color: $primary;
+$background: red;
 $body-family: 'Roboto', sans-serif, serif;
 
 @import "~bulma/bulma.sass";
+@import '@creativebulma/bulma-divider';
+
 .is-vertical-center {
   align-items: center !important;
 }
 .is-horizontal-center {
   justify-content: center !important;
+}
+
+button.navbar-burger {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0
+}
+
+.section--alt {
+  background-color: $primary;
+  color: $white;
 }

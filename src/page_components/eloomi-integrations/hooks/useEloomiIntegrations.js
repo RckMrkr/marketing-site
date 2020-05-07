@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-export default () => {
+export default (slideClass) => {
   const { hero, eloomiLogo } = useStaticQuery(
     graphql`
       query {
