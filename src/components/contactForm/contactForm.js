@@ -48,12 +48,13 @@ export default ({from, isDark}) => {
                 action="/contact/thanks/"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field">
+              <input type="hidden" value={from} />
               <div className="columns">
                 <div className="column">
                   <div className="field">
                     <label className="label" htmlFor='contactFormName'>Name</label>
                     <div className="control">
-                      <input id="contactFormName" onInput={e => setProperty(e, setName)} value={name} className="input" type="text" />
+                      <input name="name" id="contactFormName" onInput={e => setProperty(e, setName)} value={name} className="input" type="text" />
                     </div>
                   </div>
                 </div>
@@ -61,7 +62,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormEmail'>E-mail</label>
                     <div className="control">
-                      <input id="contactFormEmail" onInput={e => setProperty(e, setEmail)} value={email} className="input" type="email" />
+                      <input name="email" id="contactFormEmail" onInput={e => setProperty(e, setEmail)} value={email} className="input" type="email" />
                     </div>
                   </div>
                 </div>
@@ -71,7 +72,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormMessage'>Message</label>
                     <div className="control">
-                      <textarea id="contactFormMessage" onInput={e => setProperty(e, setMessage)} className="textarea" value={message}></textarea>
+                      <textarea name="text" id="contactFormMessage" onInput={e => setProperty(e, setMessage)} className="textarea" value={message}></textarea>
                     </div>
                   </div>
               </div></div>
