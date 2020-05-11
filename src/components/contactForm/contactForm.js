@@ -23,7 +23,6 @@ export default ({from, isDark}) => {
     e.preventDefault();
     try {
       setIsSubmitting(true)
-      await new Promise(resolve => setTimeout(resolve, 5000));
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },

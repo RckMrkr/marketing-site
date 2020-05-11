@@ -10,6 +10,6 @@ import logoSmall from './..//images/interops-logo-small.svg';
    large: logoLarge,
  }
 
-const Logo = ({size, ...props}) => <img {...props} src={imageMapping[size]} alt="InterOps" />
+const Logo = ({size, ...props}) => <img width="200" {...props} src={imageMapping[size]} alt="InterOps" />
 
 export default Logo

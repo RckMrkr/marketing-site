@@ -10,10 +10,14 @@ export default () => {
     <section className="section">
       <div className="container has-text-centered">
         <h2 className="title is-dark is-2">Prices</h2>
-        <div>
-          <button className={classname("button", styles.button, {[styles.isActive]: currency === 'Euro' })} onClick={() => setCurrency("Euro")}>€</button>
-          <button className={classname("button", styles.button, {[styles.isActive]: currency === 'DKK' })} onClick={() => setCurrency("DKK")}>DKK</button>
-          <button className={classname("button", styles.button, {[styles.isActive]: currency === 'Dollars' })} onClick={() => setCurrency("Dollars")}>$</button>
+        <div className="columns">
+          <div className="column">
+            <div>
+              <button className={classname("button", styles.button, {[styles.isActive]: currency === 'Euro' })} onClick={() => setCurrency("Euro")}>€</button>
+              <button className={classname("button", styles.button, {[styles.isActive]: currency === 'DKK' })} onClick={() => setCurrency("DKK")}>DKK</button>
+              <button className={classname("button", styles.button, {[styles.isActive]: currency === 'Dollars' })} onClick={() => setCurrency("Dollars")}>$</button>
+            </div>
+          </div>
         </div>
         <div className="columns">
           <div className="column">
