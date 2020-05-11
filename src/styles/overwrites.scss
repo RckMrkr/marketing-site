@@ -24,11 +24,27 @@
   justify-content: center !important;
 }
 
+.has-text-macaroon {
+  color: $macaroon !important;
+}
+
 button.navbar-burger {
   background-color: transparent;
   border: 0;
   cursor: pointer;
   outline: 0
+}
+.button.is-loading:after{
+  border-radius: 5000px;
+}
+.box.is-success {
+  background-color: $success;
+  color: #FFF;
+}
+
+.box.is-danger {
+  background-color: $danger;
+  color: #FFF;
 }
 
 .section--alt {
