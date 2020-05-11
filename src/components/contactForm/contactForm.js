@@ -42,7 +42,7 @@ export default ({from, isDark}) => {
         <h4 className="title has-text-centered">How may we help?</h4>
         <div className="columns is-horizontal-center">
           <div className="column is-two-thirds">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} netlify netlify-honeypot="bot-field">
               <div className="columns">
                 <div className="column">
                   <div className="field">
