@@ -4,6 +4,23 @@
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+.slider {
+  height: 15rem;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}
+
+.slide .subtitle {
+  margin-bottom: 0.5rem;
+}
+
 .slider a.previousButton {
   left: 0;
 }
@@ -15,7 +32,7 @@
 .slider svg polygon{
   fill: #FFF;
   transition: opacity 0ms ease;
-  transition-delay: 0.2s;
+  transition-delay: 0.3s;
 }
 
 .slider .disabled svg polygon{
@@ -28,9 +45,4 @@
 
 .is-padded {
   padding: 15%;
-}
-.slide {
-  width: 100%;
-  height: 100%;
-  padding: 50px;
 }

@@ -1,0 +1,28 @@
+@import './../../../../styles/variables/all.scss';
+
+.button.is-active {
+  background: $success;
+  color: #FFF;
+  border: 1px solid $success;
+}
+.button.is-active {
+  background: $success;
+  color: #FFF;
+}
+.button.is-active:hover {
+  cursor: default;
+}
+.button:hover {
+  background: $success;
+  color: #FFF;
+}
+.button.is-active:focus, .button.is-active:active{
+  border: 1px solid $success;
+}
+.button:active {
+  border-color: $success;
+}
+
+.title:not(.is-spaced) + .subtitle {
+  margin-top: -0.7rem;
+}

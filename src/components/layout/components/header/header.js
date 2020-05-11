@@ -2,16 +2,17 @@ import React from "react"
 import { Link } from "gatsby"
 import classname from 'classname'
 import useHeader from './hooks'
+import Logo from './../../../logo'
 
 const Header = (props) => {
   const { isMenuShown, toggleIsMenuShown } = useHeader(false);
 
   return (
-    <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
+    <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
-            <img alt="InterOps" src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+            <Logo size='medium' className='logo-medium' />
           </Link>
           <button onClick={toggleIsMenuShown} className={classname("navbar-burger", "burger", {"is-active": isMenuShown})} aria-label="menu" aria-expanded={isMenuShown ? "true": "false"} data-target="navbar">
             <span aria-hidden="true"></span>
@@ -28,7 +29,7 @@ const Header = (props) => {
             <Link className="navbar-item" to="/about-interops">About</Link>
             <div className="navbar-item">
               <div className="buttons">
-                <Link className="button is-light" to="/contact"><strong>Contact</strong></Link>
+                <Link className="button is-success" to="/contact"><strong>Contact</strong></Link>
               </div>
             </div>
           </div>

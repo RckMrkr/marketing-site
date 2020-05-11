@@ -1,7 +1,11 @@
 import React from "react"
+import logo from '../../../../images/interops-logo-large.svg'
+import styles from './footer.module.css'
 
-export default () => (
-  <footer className="footer has-text-centered">
-    © {new Date().getFullYear()}, InterOps
-  </footer>
-)
+const Image = () => {
+  return <div className="footer has-text-centered">
+    <img src={logo} alt='InterOps' className={styles.footer} />
+  </div>
+}
+
+export default Image

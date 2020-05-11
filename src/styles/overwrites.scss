@@ -1,0 +1,49 @@
+@import './variables/all.scss';
+
+.section.is-dark {
+  background-color: $dark;
+  color: $cloud;
+}
+
+.section.is-dark .label {
+  color: $cloud;
+}
+
+.section.is-dark .title {
+  color: $cloud;
+}
+
+.title.is-dark {
+  color: $dark;
+}
+
+.is-vertical-center {
+  align-items: center !important;
+}
+.is-horizontal-center {
+  justify-content: center !important;
+}
+
+button.navbar-burger {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0
+}
+
+.section--alt {
+  background-color: $primary;
+  color: $white;
+}
+
+.button.is-success:hover {
+  background-color: transparent;
+  color: $success;
+  border: 1px solid $success
+}
+
+.tile.is-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

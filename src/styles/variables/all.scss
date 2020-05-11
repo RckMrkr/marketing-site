@@ -1,0 +1,46 @@
+$fullhd-enabled: false;
+
+$macaroon: #dcbe21;
+$sky: #2e96d3;
+$ash: #8B8E8A;
+$cloud: #E4E5E0;
+$toxic: #52B06F;
+$crimson: #C2463F;
+$morning: #C08745;
+$eggplant: #3c4989;
+
+$success: $toxic;
+$danger: $crimson;
+$warning: $morning;
+$dark: $eggplant;
+
+$primary: #2e96d3;
+$text: $ash;
+
+$button-focus-box-shadow-size: 0 0 0 0;
+
+$navbar-padding-vertical: 7rem;
+$navbar-item-img-max-height: 3rem;
+$navbar-background-color: lighten($cloud, 20%);
+$navbar-item-color: lighten($ash, 0%);
+$navbar-item-hover-background-color: lighten($ash, 20%);
+$navbar-item-hover-color: lighten($cloud, 20%);
+
+$navbar-height:  5rem;
+
+$title-family: 'Manrope', sans-serif, serif;
+$title-size: 2rem;
+$title-weight: 600;
+
+$radius-small: 0;
+$radius: 0;
+$radius-large: 0;
+$radius-rounded: 0;
+
+$subtitle-family: 'Manrope', sans-serif, serif;
+$subtitle-size: 1.5rem;
+$subtitle-weight: 300;
+
+$body-family: 'Roboto', sans-serif, serif;
+
+$text: $ash;

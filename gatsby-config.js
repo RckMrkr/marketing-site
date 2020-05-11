@@ -3,7 +3,26 @@ module.exports = {
     title: `InterOps`,
     description: `Here to help with any technology obstacle you may face`,
     author: `InterOps`,
+    defaultCurrency: "Euro",
+    prices: {
+      migration: {
+        "DKK": 1500,
+        "Dollars": 220,
+        "Euro": 200,
+      },
+      integration: {
+        "DKK": 29500,
+        "Dollars": 4280,
+        "Euro": 3950,
+      },
+      monitoring: {
+        "DKK": 10000,
+        "Dollars": 1450,
+        "Euro": 1340,
+      }
+    },
   },
+  
   pathPrefix: '/wip',
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,15 +38,21 @@ module.exports = {
     `gatsby-background-image`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+        features: [`fetch`]
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `InterOps`,
+        short_name: `InterOps`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#2e96d3`,
+        theme_color: `#2e96d3`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/interops-logo-small.svg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -35,12 +60,12 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Noto Sans`,
-            variants: [`400`]
+            family: `Manrope`,
+            variants: [`300`,`400`]
           },
           {
             family: `Roboto`,
-            variants: [`100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`,`900` ]
+            variants: [`400`, `700`, `italic` ]
           },
         ],
       },

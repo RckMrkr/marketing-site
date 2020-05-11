@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-export default (slideClass) => {
-  const { hero, eloomiLogo } = useStaticQuery(
+export default () => {
+  const { hero, eloomiLogo, insights } = useStaticQuery(
     graphql`
       query {
         hero: file(relativePath: { eq: "integration-hero.png" }) {
@@ -17,13 +17,21 @@ export default (slideClass) => {
               ...GatsbyImageSharpFixed
             }
           }
-        }
+        },
+        insights: file(relativePath: { eq: "eloomi-integrations/eloomi-performance.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 600) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        },
       }
     `
   )
 
   return {
     hero: {fluid: hero.childImageSharp.fluid },
-    eloomiLogo: { fixed: eloomiLogo.childImageSharp.fixed }
+    eloomiLogo: { fixed: eloomiLogo.childImageSharp.fixed },
+    insights: {fluid: insights.childImageSharp.fluid }
   }
 }
