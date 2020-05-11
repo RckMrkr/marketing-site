@@ -48,7 +48,7 @@ export default ({from, isDark}) => {
                 action="/contact/thanks/"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field">
-              <input type="hidden" value={from} />
+              <input type="hidden" name="sentFrom" value={from} />
               <div className="columns">
                 <div className="column">
                   <div className="field">
@@ -72,7 +72,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormMessage'>Message</label>
                     <div className="control">
-                      <textarea name="text" id="contactFormMessage" onInput={e => setProperty(e, setMessage)} className="textarea" value={message}></textarea>
+                      <textarea name="message" id="contactFormMessage" onInput={e => setProperty(e, setMessage)} className="textarea" value={message}></textarea>
                     </div>
                   </div>
               </div></div>
