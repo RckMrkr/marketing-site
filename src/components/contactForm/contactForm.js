@@ -35,7 +35,7 @@ export default ({from, isDark}) => {
       setShowModal('error');
     }
   }
-  const setProperty = (event, setter) => setter(event.target.value);
+  const setProperty = setter => event => setter(event.target.value);
   return (
     <section className={classname("section", {"is-dark": isDark})}>
       <div className="container">
@@ -54,7 +54,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormName'>Name</label>
                     <div className="control">
-                      <input name="name" id="contactFormName" onInput={e => setProperty(e, setName)} value={name} className="input" type="text" />
+                      <input name="name" id="contactFormName" onChange={setProperty(setName)} value={name} className="input" type="text" />
                     </div>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormEmail'>E-mail</label>
                     <div className="control">
-                      <input name="email" id="contactFormEmail" onInput={e => setProperty(e, setEmail)} value={email} className="input" type="email" />
+                      <input name="email" id="contactFormEmail" onChange={setProperty(setEmail)} value={email} className="input" type="email" />
                     </div>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormMessage'>Message</label>
                     <div className="control">
-                      <textarea name="message" id="contactFormMessage" onInput={e => setProperty(e, setMessage)} className="textarea" value={message}></textarea>
+                      <textarea name="message" id="contactFormMessage" onChange={setProperty(setMessage)} className="textarea" value={message}></textarea>
                     </div>
                   </div>
               </div></div>

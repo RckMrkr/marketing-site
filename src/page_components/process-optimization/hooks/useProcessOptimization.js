@@ -4,7 +4,7 @@ export default () => {
   const { hero } = useStaticQuery(
     graphql`
       query {
-        hero: file(relativePath: { eq: "integration-hero.png" }) {
+        hero: file(relativePath: { eq: "process-optimization/ruler.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 2000) {
               ...GatsbyImageSharpFluid_withWebp

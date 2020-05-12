@@ -1,8 +1,8 @@
 import React from "react"
 import PageLayout from "../../components/pageLayout"
 import useEloomiIntegrations from './hooks';
+import './eloomi-integrations.scss';
 import Tiles from '../../components/tiles'
-import './eloomi-integrations.css';
 import TextTile from "../../components/textTile";
 import ImageTile from "../../components/imageTile";
 import Slider from 'react-animated-slider';

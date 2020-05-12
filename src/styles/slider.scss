@@ -1,4 +1,3 @@
-@import '~react-animated-slider/build/horizontal.css';
 .slide.animateIn,
 .slide.animateOut {
   -webkit-transition: all 0.2s ease;
@@ -37,12 +36,4 @@
 
 .slider .disabled svg polygon{
   opacity: 0;
-}
-
-.notification {
-  padding-right: 1.5rem
-}
-
-.is-padded {
-  padding: 15%;
 }
