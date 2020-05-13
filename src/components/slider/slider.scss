@@ -1,3 +1,4 @@
+@import '~react-animated-slider/build/horizontal.css';
 .slide.animateIn,
 .slide.animateOut {
   -webkit-transition: all 0.2s ease;
@@ -9,8 +10,15 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 30px 50px;
+}
+
+.slider .track {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
 }
 
 .slider {

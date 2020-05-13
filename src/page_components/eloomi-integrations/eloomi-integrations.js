@@ -5,7 +5,7 @@ import './eloomi-integrations.scss';
 import Tiles from '../../components/tiles'
 import TextTile from "../../components/textTile";
 import ImageTile from "../../components/imageTile";
-import Slider from 'react-animated-slider';
+import Slider from '../../components/slider';
 import Pricing from './components/pricing';
 import ContactForm from '../../components/contactForm';
 
@@ -52,7 +52,7 @@ const EloomiIntegrations = ({ location }) => {
             </TextTile>
             <TextTile textClasses={['notification', 'is-success', 'is-flex', 'is-vertical-center']}>
               <Slider duration={200} infinite={false}>
-                {slides.map((slide, index) => <div className='slide' key={index}>
+                {slides.map((slide, index) => <div key={index}>
                   <h2 className="subtitle no-margin">{slide.title}</h2>
                   <div>{slide.description}</div>
                 </div>)}

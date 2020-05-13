@@ -1,8 +1,7 @@
 import React from 'react'
-import './examples.scss';
 import styles from './examples.module.scss';
 import classname from 'classname';
-import Slider from 'react-animated-slider';
+import Slider from '../../../../components/slider';
 import Tiles from '../../../../components/tiles';
 import TextTile from "../../../../components/textTile";
 
