@@ -47,7 +47,7 @@ export default () => {
                           <div>{text}</div>
                         </div>
                       )
-                      })
+                    })
                 }
               </Slider>
             </TextTile>
