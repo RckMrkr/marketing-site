@@ -40,7 +40,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
-        features: [`fetch`]
+        features: [`fetch`, `Array.prototype.flat`]
       },
     },
     {
