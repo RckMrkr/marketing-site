@@ -13,6 +13,14 @@
   color: $cloud;
 }
 
+.section.is-warning {
+  background-color: $warning;
+  color: $cloud;
+}
+.section.is-warning .title {
+  color: #FFF;
+}
+
 .title.is-dark {
   color: $dark;
 }

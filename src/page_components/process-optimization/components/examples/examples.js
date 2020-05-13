@@ -31,12 +31,12 @@ export default () => {
       <section className="section is-dark">
         <div className={classname('container', styles.explanation)}>
           <Tiles>
-            <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-flex', 'is-horizontal-center', 'is-vertical-center']}>
+            <TextTile textClasses={['notification', 'is-warning', 'is-padded', 'is-flex', 'is-horizontal-center', 'is-vertical-center']}>
               <p className="subtitle has-text-centered">
                 There are a lot of tasks that are ideal for some kind of optimization.<br />You can see some examples in the slider. <br/>
               </p>
             </TextTile>
-            <TextTile textClasses={['notification', 'is-success', 'is-flex', 'is-vertical-center']}>
+            <TextTile textClasses={['notification', 'is-warning', 'is-flex', 'is-vertical-center']}>
               <Slider duration={200} infinite={false}>
                 {
                   examples.flat().map((text, index) => {

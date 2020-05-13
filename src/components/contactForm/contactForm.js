@@ -1,6 +1,7 @@
-import React from 'react'
-import classname from 'classname'
-import useContactForm from './hooks'
+import React from 'react';
+import classname from 'classname';
+import useContactForm from './hooks';
+import { Element } from 'react-scroll';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -15,6 +16,7 @@ export default ({from, isDark}) => {
     message, setMessage,
     showModal, setShowModal,
     isSubmitting, setIsSubmitting,
+    contactElementName,
   } = useContactForm();
 
 
@@ -37,6 +39,7 @@ export default ({from, isDark}) => {
   }
   const setProperty = setter => event => setter(event.target.value);
   return (
+    <Element name={contactElementName}>
     <section className={classname("section", {"is-dark": isDark})}>
       <div className="container">
         <h4 className="title has-text-centered">How may we help?</h4>
@@ -116,5 +119,6 @@ export default ({from, isDark}) => {
         <button className="modal-close is-large" aria-label="close"></button>
       </div>
     </section>
+    </Element>
   )
 }

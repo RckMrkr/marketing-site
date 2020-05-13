@@ -6,7 +6,7 @@ export default () => {
       query {
         hero: file(relativePath: { eq: "process-optimization/ruler.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 2000) {
+            fluid(quality: 80, maxWidth: 800) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

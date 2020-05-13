@@ -18,8 +18,6 @@ const PageLayout = ({ children, location, hero, title, subtitle }) => {
         </BackgroundImage>
         
       </section>
-      <section className="section">
-      </section>
       { children }
     </Layout>
   )

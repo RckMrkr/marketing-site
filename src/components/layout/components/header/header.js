@@ -3,9 +3,10 @@ import { Link } from "gatsby"
 import classname from 'classname'
 import useHeader from './hooks'
 import Logo from './../../../logo'
+import {Link as ScrollLink} from 'react-scroll'
 
 const Header = (props) => {
-  const { isMenuShown, toggleIsMenuShown } = useHeader(false);
+  const { isMenuShown, toggleIsMenuShown, contactElementName } = useHeader(false);
 
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -26,10 +27,10 @@ const Header = (props) => {
             <Link className="navbar-item" to="/integrations">Integrations</Link>
             <Link className="navbar-item" to="/eloomi-integrations">eloomi</Link>
             <Link className="navbar-item" to="/process-optimization">Process optimization</Link>
-            <Link className="navbar-item" to="/about-interops">About</Link>
+            <Link className="navbar-item" to="/about-interops">About InterOps</Link>
             <div className="navbar-item">
               <div className="buttons">
-                <Link className="button is-success" to="/contact"><strong>Contact</strong></Link>
+                <ScrollLink className="button is-success" spy smooth to={contactElementName}><strong>Contact</strong></ScrollLink>
               </div>
             </div>
           </div>

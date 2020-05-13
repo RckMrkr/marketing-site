@@ -3,6 +3,7 @@ module.exports = {
     title: `InterOps`,
     description: `Here to help with any technology obstacle you may face`,
     author: `InterOps`,
+    contactScrollElementName: 'contactScrollName',
     defaultCurrency: "Euro",
     prices: {
       migration: {
