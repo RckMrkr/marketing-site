@@ -19,7 +19,7 @@ export default ({seconds, className}) => {
     return seconds / scale > 1;
   }).pop();
   const amountForScale = Math.round(seconds / scale);
-  const formattedUnit = amountForScale == 1
+  const formattedUnit = amountForScale === 1
     ? unit.slice(0, -1)
     : unit;
   

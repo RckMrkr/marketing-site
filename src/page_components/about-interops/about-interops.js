@@ -10,7 +10,7 @@ const Contact = ({ location }) => {
   const { hero } = useAboutInterOps();
 
   return (
-    <PageLayout location={location} hero={hero} title='Our Philosophy'>
+    <PageLayout location={location} hero={hero} title='About InterOps' subtitle="What do we believe in?">
       <section className="section">
         <div className="container">
         <p className="title has-text-centered i" style={{marginBottom: '20px'}}>At InterOps we live by a few simple truths.</p>
@@ -55,7 +55,7 @@ const Contact = ({ location }) => {
             <div className="container">
             <div className="hero is-medium">
             <BackgroundImage
-                durationFadeIn={2000}
+                fadeIn
                 className="hero-body"
                 {...hero}
               >

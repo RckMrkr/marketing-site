@@ -7,7 +7,6 @@ const PageLayout = ({ children, location, hero, title, subtitle }) => {
     <Layout location={location}>
       <section className="hero is-medium">
         <BackgroundImage
-          durationFadeIn={2000}
           className="hero-body"
           {...hero}
         >

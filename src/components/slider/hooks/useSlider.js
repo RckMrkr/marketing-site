@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState, Children } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default () => {
   const ref = useRef();
   const [elementWidth, setElementWidth] = useState(-1);
+
   useEffect(() => {
     const handler = () => {
       ref.current && setElementWidth(ref.current.offsetWidth);
@@ -20,7 +21,6 @@ export default () => {
     const maxHeight = Math.max(...heights);
     ref.current.querySelectorAll('.track')[0].style.height = maxHeight + 'px';
   }, [elementWidth])
-
 
   return { ref };
 }

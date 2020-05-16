@@ -75,7 +75,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormMessage'>Message</label>
                     <div className="control">
-                      <textarea name="message" id="contactFormMessage" onChange={setProperty(setMessage)} className="textarea" value={message}></textarea>
+                      <textarea placeholder="Tell us a bit about what you need, so we are a bit better prepared when we contact you." name="message" id="contactFormMessage" onChange={setProperty(setMessage)} className="textarea" value={message}></textarea>
                     </div>
                   </div>
               </div></div>

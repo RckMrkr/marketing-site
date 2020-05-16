@@ -6,5 +6,7 @@ import './slider.scss';
 export default (props) => {
   const { ref } = useSlider();
 
-  return <div style={{width: '100%', height: '100%'}} ref={ref}><Slider {...props} /></div>
+  return <div style={{width: '100%', height: '100%'}} ref={ref}>
+      <Slider {...props}  />
+    </div>
 }

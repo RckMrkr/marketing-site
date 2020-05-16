@@ -28,7 +28,8 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-scroll": "^1.7.16",
-    "react-slick": "^0.26.1"
+    "react-slick": "^0.26.1",
+    "react-ticker": "^1.2.2"
   },
   "devDependencies": {
     "prettier": "2.0.4"

@@ -3,6 +3,7 @@ import Layout from "../../components/layout/layout"
 import BackgroundImage from 'gatsby-background-image'
 import { graphql, useStaticQuery } from 'gatsby'
 import './index.scss';
+import ContactForm from "../../components/contactForm";
 
 const Frontpage = ({ location }) => {
   const { desktop } = useStaticQuery(
@@ -23,7 +24,6 @@ const Frontpage = ({ location }) => {
     <Layout location={location}>
       <section className="hero is-large">
         <BackgroundImage
-          durationFadeIn={2000}
           className="hero-body"
           fluid={desktop.childImageSharp.fluid}
         >
@@ -53,6 +53,7 @@ const Frontpage = ({ location }) => {
           </div>
         </div>
       </section>
+      <ContactForm isDark from="frontpage" />
     </Layout>
   )
 }

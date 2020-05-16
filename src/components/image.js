@@ -26,7 +26,7 @@ const Image = () => {
     }
   `)
 
-  return <Img fadeIn durationFadeIn={20000} draggable loading='eager' fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fadeIn draggable loading='eager' fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image
