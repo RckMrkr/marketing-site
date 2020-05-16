@@ -8,6 +8,8 @@ import ImageTile from '../../components/imageTile'
 import Slider from '../../components/slider'
 import Ticker from 'react-ticker'
 import Logo from './component/logo'
+import PageVisibility from 'react-page-visibility'
+
 
 const integrationTypes = [
   ['APIs', "APIs are similar to websites, in the sense that it is a URL that a is being called with some data. Instead of a regular person requesting it, it is just a program. The response is also optimized for being read by a computer and not by humans. It is very powerful and APIs can be used to both update and extract data. APIs are very versatile and if a system exposes them, they will most likely be used in an integration."],
@@ -19,7 +21,7 @@ const integrationTypes = [
 
 const Integrations = ({ location }) => {
 
-  const { hero, setMoveLogos, moveLogos, logos } = useIntegrations();
+  const { hero, setIsHovered, isHovered, moveLogos, logos, onVisibilityChange, pageIsVisible } = useIntegrations();
 
   const brands = [
     {name: 'Azure Active Directory', logo: logos.azureActiveDirectory },
@@ -35,6 +37,7 @@ const Integrations = ({ location }) => {
   ];
   hero.style = {backgroundPositionY: '20%'};
   return (
+    <PageVisibility onChange={onVisibilityChange}>
     <PageLayout location={location} hero={hero} title='Integrations' subtitle='When you need to share information between systems'>
       <section className="section">
         <div className="container">
@@ -77,20 +80,21 @@ const Integrations = ({ location }) => {
         </div>
       </section>
       <section className="section" style={{paddingLeft: 0, paddingRight: '15px'}}>
-        <h4 className="title has-text-centered">Some of the systems we have experience with</h4>
-        <div onMouseEnter={() => setMoveLogos(false)} onMouseLeave={() => setMoveLogos(true)}>
-          <Ticker speed={3} move={moveLogos} direction='toRight' offset="100%">
-            {
-              ({index}) => {
-                const brand = brands[index % brands.length];
-                return <Logo name={brand.name} logo={brand.logo} />
+          <h4 className="title has-text-centered">Some of the systems we have experience with</h4>
+          <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            {pageIsVisible && <Ticker speed={3} move={!isHovered} direction='toRight' offset="100%">
+              {
+                ({index}) => {
+                  const brand = brands[index % brands.length];
+                  return <Logo name={brand.name} logo={brand.logo} />
+                }
               }
-            }
-          </Ticker>
-        </div>
+            </Ticker> }
+          </div>
       </section>
       <ContactForm isDark from="integrations" />
     </PageLayout>
+        </PageVisibility>
   )
 }
 

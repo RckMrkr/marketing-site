@@ -106,7 +106,12 @@ export default () => {
     `
   )
 
-  const [moveLogos, setMoveLogos] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const [pageIsVisible, setPageIsVisible] = useState(true);
+  const onVisibilityChange = (isVisible) => {
+    console.log(isVisible)
+    setPageIsVisible(isVisible)
+  }
 
   return {
     hero: hero.childImageSharp,
@@ -123,7 +128,9 @@ export default () => {
       aws: awsLogo.childImageSharp,
       azure: azureLogo.childImageSharp,
     },
-    moveLogos,
-    setMoveLogos,
+    isHovered, setIsHovered,
+    onVisibilityChange,
+    pageIsVisible,
+    isHovered
   }
 }
