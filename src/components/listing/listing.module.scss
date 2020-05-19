@@ -1,0 +1,37 @@
+@import './../../styles/variables/all.scss';
+
+$icon-width: 3.5rem;
+$gutter: 1rem;
+
+.listing .icon {
+  width: $icon-width;
+  height: $icon-width;
+  padding-right: $gutter
+}
+
+.listing .icon, .listing .title {
+  display: inline-block;
+}
+
+.listing .content {
+  margin-left: $icon-width;
+}
+
+.listing .icon.is-success svg {
+  color: $success
+}
+.listing .icon.is-warning svg {
+  color: $warning
+}
+
+.listing .icon.is-danger svg {
+  color: $danger
+}
+
+.listing .content.is-dark {
+  color: darken($ash, 20%);
+}
+
+.listing .icon.is-dark svg {
+  color: $dark;
+}

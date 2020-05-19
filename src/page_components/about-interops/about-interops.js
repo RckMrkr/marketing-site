@@ -25,7 +25,7 @@ const Contact = ({ location }) => {
             <p className="has-text-centered subtitle is-4">Our customers depend on us doing a good job</p>
           </TextTile>
           <TextTile textClasses={['notification', 'is-warning', 'is-padded', 'is-size-6']}>
-            <p className="has-text-centered subtitle is-4">Effective communication is tough</p>
+            <p className="has-text-centered subtitle is-4">Communication is hard</p>
           </TextTile>
         </Tiles>
       </div>

@@ -55,7 +55,10 @@ button.navbar-burger {
   color: $success;
 }
 .subtitle.is-white, .title.is-white {
-  color: #FFF;
+  color: #FFF !important;
+}
+.subtitle.is-black, .title.black {
+  color: #000 !important;
 }
 .outlined {
   color: white;
@@ -83,4 +86,8 @@ button.navbar-burger {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.is-cloud {
+  color: #E4E5E0;
 }

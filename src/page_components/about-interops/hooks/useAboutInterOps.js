@@ -6,7 +6,12 @@ export default () => {
       query {
         hero: file(relativePath: { eq: "integration-hero.png" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 2000) {
+            fluid(quality: 80, maxWidth: 707, 
+              duotone: {
+                highlight: "#3c4989",
+                shadow: "#3c4989",
+                opacity: 30
+              }) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

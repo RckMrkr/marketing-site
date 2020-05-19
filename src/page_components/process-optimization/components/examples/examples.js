@@ -12,50 +12,34 @@ const examples = [
   ["When people join the company, it is your job to make sure they get a user in all your systems with an appropriate email address and that the manager gets the initial login credentials.", "A small program is created that asks for the relevant info (name, email, department, title) and creates the user in all the systems she needs access to. Perhaps even sets permission levels correctly based on titles or department. At the end the manager is notified so she can ensure a quick onboarding."],
 ]
 
-export default () => {
-
-  return (
-    <>
-    <section className="section">
-      <div className="container">
-        <div className="columns is-horizontal-center">
-            <div className="column is-half ">
-              <p className="is-size-4 has-text-centered has-text-dark">
-                Some tasks can be fully automated, while others require a bit of input in order to have the process flexible enough for your needs
-              </p>
-            </div>
-          </div>
-      </div>
-    </section>
-      <section className="section is-dark">
-        <div className={classname('container', styles.explanation)}>
-          <Tiles>
-            <TextTile textClasses={['notification', 'is-warning', 'is-padded', 'is-flex', 'is-horizontal-center', 'is-vertical-center']}>
-              <p className="subtitle has-text-centered">
-                There are a lot of tasks that are ideal for some kind of optimization.<br />You can see some examples in the slider. <br/>
-              </p>
-            </TextTile>
-            <TextTile textClasses={['notification', 'is-warning', 'is-flex', 'is-vertical-center']}>
-              <Slider duration={200} infinite={false}>
-                {
-                  examples.flat().map((text, index) => {
-                      const title = index % 2 === 0 ? 'Problem' : 'Solution'
-                      return (
-                        <div className='slide' key={`${index}-problem`}>
-                          <h2 className="subtitle no-margin">{ title } {Math.floor(index/2) + 1}</h2>
-                          <div>{text}</div>
-                        </div>
-                      )
-                    })
-                }
-              </Slider>
-            </TextTile>
-          </Tiles>
-        </div>
-      </section>
-    </>
-  )
-}
+export default () => (
+  <section className="section is-dark">
+    <div className={classname('container', styles.explanation)}>
+      <Tiles>
+        <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-flex', 'is-horizontal-center', 'is-vertical-center']}>
+          <p className="subtitle has-text-centered">
+            There are a lot of tasks that are ideal for some kind of optimization.<br />You can see some examples in the slider. <br/>
+          </p>
+        </TextTile>
+        <TextTile textClasses={['notification', 'is-success', 'is-flex', 'is-vertical-center']}>
+          <Slider duration={200} infinite={false}>
+            {
+              examples.flat().map((text, index) => {
+                  const title = index % 2 === 0 ? 'Problem' : 'Solution'
+                  return (
+                    <div className='slide' key={`${index}-problem`}>
+                      <h2 className="subtitle no-margin">{ title } {Math.floor(index/2) + 1}</h2>
+                      <div>{text}</div>
+                    </div>
+                  )
+                })
+            }
+          </Slider>
+        </TextTile>
+      </Tiles>
+    </div>
+  </section>
+)
 
 // export default () => {
 //   return (

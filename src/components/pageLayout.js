@@ -11,8 +11,8 @@ const PageLayout = ({ children, location, hero, title, subtitle }) => {
           {...hero}
         >
         <div className="container">
-        <h1 className="title is-1 is-white outlined">{ title }</h1>
-        <h4 className="subtitle is-3 is-white outlined">{ subtitle }</h4>
+        <h1 className="title is-1 is-white">{ title }</h1>
+        <h4 className="subtitle is-3 is-white">{ subtitle }</h4>
         </div>
         </BackgroundImage>
         
