@@ -17,7 +17,7 @@ export default () => {
 
   const setProperty = setter => event => setter(event.target.value);
   return (
-    <section className="section">
+    <section className="section is-medium">
       <div className="container">
         <h3 className="title has-text-centered is-3">Should I consider it?</h3>
         <Tiles>

@@ -8,6 +8,9 @@ import ImageTile from "../../components/imageTile";
 import Slider from '../../components/slider';
 import Pricing from './components/pricing';
 import ContactForm from '../../components/contactForm';
+import Img from 'gatsby-image'
+import interopsLarge from '../../images/interops-logo-large.svg'
+import {FaTimes} from 'react-icons/fa'
 
 const slides = [
   { title: 'Identify internal stakeholders', description: 'First meeting we start by identifying any potential outside dependencies. People outside usually have their own priorities and their own schedule, so we need to identify them quickly, so we can get on their radar as early as possible.'},
@@ -29,26 +32,26 @@ const EloomiIntegrations = ({ location }) => {
       <section className="section">
         <div className="container">
           <Tiles>
-            <TextTile textClasses={['notification', 'is-primary', 'is-padded', 'is-size-4']}>
+            <TextTile textClasses={['notification', 'is-dark', 'is-padded', 'is-size-4']}>
               <p className="has-text-centered subtitle is-3">As the official eloomi integration partner, we know what it takes.</p>
             </TextTile>
             <ImageTile imageProps={eloomiLogo} imageBackground='#0030c0' />
           </Tiles>
           <Tiles>
             <ImageTile imageProps={{...insights, style:{ width: '100%'}}} imageBackground='#FFF' />
-            <TextTile textClasses={['is-flex', 'is-vertical-center', 'is-horizontal-center', 'has-text-centered']}>
+            <TextTile textClasses={['is-flex', 'is-vertical-center', 'is-horizontal-center', 'is-padded-small']}>
               <p className='is-size-4'>At InterOps we have spent a lot of time in the eloomi platform and with the APIs that eloomi provide. We will be able to steer you through the process and deliver an integration you can trust.</p>
             </TextTile>
           </Tiles>
         </div>
       </section>
       <section className="section is-dark">
-        <div className="container has-text-centered">
-          <h3 className="title">We got the integration process down to a science</h3>
+        <div className="container">
+          <h3 className="title"></h3>
           <div className="container">
           <Tiles>
             <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-flex', 'is-horizontal-center', 'is-vertical-center']}>
-              <p className="subtitle is-3 has-text-centered">Why reinvent the wheel?</p>
+              <p className="subtitle is-3 has-text-centered">We got the integration process down to a science</p>
             </TextTile>
             <TextTile textClasses={['notification', 'is-success', 'is-flex', 'is-vertical-center']}>
               <Slider duration={200} infinite={false}>

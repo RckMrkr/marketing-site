@@ -30,8 +30,8 @@ export default () => {
   )
 
   return {
-    hero: {fluid: hero.childImageSharp.fluid },
-    eloomiLogo: { fixed: eloomiLogo.childImageSharp.fixed },
-    insights: {fluid: insights.childImageSharp.fluid }
+    hero: hero.childImageSharp,
+    eloomiLogo: eloomiLogo.childImageSharp,
+    insights: insights.childImageSharp
   }
 }

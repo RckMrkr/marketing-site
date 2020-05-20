@@ -9,6 +9,8 @@ import Slider from '../../components/slider'
 import Ticker from 'react-ticker'
 import Logo from './component/logo'
 import PageVisibility from 'react-page-visibility'
+import styles from './integrations.module.scss';
+import Progress from './component/progress'
 
 
 const integrationTypes = [
@@ -21,7 +23,7 @@ const integrationTypes = [
 
 const Integrations = ({ location }) => {
 
-  const { hero, setIsHovered, isHovered, moveLogos, logos, onVisibilityChange, pageIsVisible } = useIntegrations();
+  const { hero, setIsHovered, isHovered, dataImage, logos, onVisibilityChange, pageIsVisible } = useIntegrations();
 
   const brands = [
     {name: 'Azure Active Directory', logo: logos.azureActiveDirectory },
@@ -38,63 +40,66 @@ const Integrations = ({ location }) => {
   hero.style = {backgroundPositionY: '20%'};
   return (
     <PageVisibility onChange={onVisibilityChange}>
-    <PageLayout location={location} hero={hero} title='Integrations' subtitle='When you need to share information between systems'>
-      <section className="section">
-        <div className="container">
-          <Tiles>
-            <TextTile textClasses={['notification', 'is-primary', 'is-padded', 'is-size-4']}>
-              <p className="has-text-centered subtitle is-3">If you have a lot of time to copy data between systems and always do it without error, feel free to move on. If not: Read on.</p>
-            </TextTile>
-            <ImageTile imageProps={{...hero, style:{ width: '100%'}}} imageBackground='#FFF' />
-          </Tiles>
-          <Tiles>
-            <ImageTile imageProps={{...hero, style:{ width: '100%'}}} imageBackground='#FFF' />
-            <TextTile textClasses={['is-flex', 'is-vertical-center', 'is-horizontal-center', 'has-text-centered']}>
-              <p className='is-size-4'>If the system you usually update can expose the data in a secure and predictable way, you can start being creative with what you want to do.<br />
-              If the receiving end allows inserting or updating data, you can make some very powerful integrations.</p>
-            </TextTile>
-          </Tiles>
-        </div>
-      </section>
-      <section className="section is-dark">
-        <div className='container'>
-          <Tiles>
-            <TextTile textClasses={['notification', 'is-warning', 'is-padded', 'is-flex', 'is-horizontal-center', 'is-vertical-center']}>
-              <p className="subtitle has-text-centered">
-                A lot of different types of integrations exist. Not all system support all types, but a lot of established system provide at least 1 method of exporting from the system and importing data into the system.
-              </p>
-            </TextTile>
-            <TextTile textClasses={['notification', 'is-warning', 'is-flex', 'is-vertical-center']}>
-              <Slider className={'slider is-flex is-vertical-center'} duration={200} infinite={false}>
-                {
-                  integrationTypes.map(([title, description]) => (
-                    <div key={title}>
-                      <h2 className="subtitle no-margin">{ title }</h2>
-                      <div>{description}</div>
-                    </div>
-                  ))
-                }
-              </Slider>
-            </TextTile>
-          </Tiles>
-        </div>
-      </section>
-      <section className="section" style={{paddingLeft: 0, paddingRight: '15px'}}>
-          <h4 className="title has-text-centered">Some of the systems we have experience with</h4>
-          <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            {pageIsVisible && <Ticker speed={3} move={!isHovered} direction='toRight' offset="100%">
-              {
-                ({index}) => {
-                  const brand = brands[index % brands.length];
-                  return <Logo name={brand.name} logo={brand.logo} />
-                }
-              }
-            </Ticker> }
+      <PageLayout location={location} hero={hero} title='Integrations' subtitle='When you need to share information between systems'>
+        <section className="section">
+          <div className="container">
+            <Tiles>
+              <TextTile textClasses={['notification', 'is-dark', 'is-padded', 'is-size-4', 'is-flex', 'is-vertical-center']}>
+                <p className="has-text-centered subtitle is-3">If you have a lot of time to copy data between systems and always do it without error, feel free to move on. If not: Read on.</p>
+              </TextTile>
+              
+              <TextTile textClasses={['notification', 'is-dark', 'is-padded', 'is-size-4', 'is-flex', 'is-vertical-center']}>
+                <Progress />
+              </TextTile>
+            </Tiles>
+            <Tiles>
+              <ImageTile imageProps={{...dataImage, style:{ width: '100%'}}} imageBackground='#FFF' />
+              <TextTile textClasses={['is-flex', 'is-vertical-center', 'is-horizontal-center', styles.isPaddedSmall]}>
+                <p className='is-size-4'>If the system you usually update can expose the data in a secure and predictable way, you can start being creative with what you want to do.<br />
+                If the receiving end allows inserting or updating data, you can make some very powerful integrations.</p>
+              </TextTile>
+            </Tiles>
           </div>
-      </section>
-      <ContactForm isDark from="integrations" />
-    </PageLayout>
-        </PageVisibility>
+        </section>
+        <section className="section is-dark">
+          <div className='container'>
+            <Tiles>
+              <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-flex', 'is-horizontal-center', 'is-vertical-center']}>
+                <p className="subtitle has-text-centered">
+                  A lot of different types of integrations exist. Not all system support all types, but a lot of established system provide at least 1 method of exporting from the system and importing data into the system.
+                </p>
+              </TextTile>
+              <TextTile textClasses={['notification', 'is-success', 'is-flex', 'is-vertical-center']}>
+                <Slider className={'slider is-flex is-vertical-center'} duration={200} infinite={false}>
+                  {
+                    integrationTypes.map(([title, description]) => (
+                      <div key={title}>
+                        <h2 className="subtitle no-margin">{ title }</h2>
+                        <div>{description}</div>
+                      </div>
+                    ))
+                  }
+                </Slider>
+              </TextTile>
+            </Tiles>
+          </div>
+        </section>
+        <section className="section" style={{paddingLeft: 0, paddingRight: '15px'}}>
+            <h4 className="title has-text-centered">Some of the systems we have experience with</h4>
+            <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+              {pageIsVisible && <Ticker speed={3} move={!isHovered} direction='toRight' offset="100%">
+                {
+                  ({index}) => {
+                    const brand = brands[index % brands.length];
+                    return <Logo name={brand.name} logo={brand.logo} />
+                  }
+                }
+              </Ticker> }
+            </div>
+        </section>
+        <ContactForm isDark from="integrations" />
+      </PageLayout>
+    </PageVisibility>
   )
 }
 

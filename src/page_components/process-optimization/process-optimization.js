@@ -1,8 +1,6 @@
 import React from "react"
 import PageLayout from "../../components/pageLayout"
 import useProcessOptimization from './hooks';
-import Tiles from '../../components/tiles';
-import TextTile from "../../components/textTile";
 import Calculator from './components/calculator';
 import Examples from './components/examples'
 import ContactForm from '../../components/contactForm'
@@ -14,7 +12,7 @@ const ProcessOptimization = ({ location }) => {
   hero.style = {'backgroundPositionY': '30%'};
   return (
     <PageLayout location={location} hero={hero} title='Process optimization' subtitle='Let us help you optimize your processes through technology'>
-      <section className="section">
+      <section className="section is-medium">
         <div className="container">
           <div className="columns">
             <Listing icon={FaTasks} title="Time is precious">

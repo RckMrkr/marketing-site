@@ -15,12 +15,25 @@ export default () => {
     cloudinaryLogo,
     awsLogo,
     azureLogo,
+    dataImage,
   } = useStaticQuery(
     graphql`
       query {
         hero: file(relativePath: { eq: "integrations/dashboard.jpg" }) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 707, 
+              duotone: {
+                highlight: "#3c4989",
+                shadow: "#3c4989",
+                opacity: 30
+              }) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        },
+        dataImage: file(relativePath: { eq: "integrations/data.jpg" }) {
+          childImageSharp {
+            fluid(quality: 80, maxWidth: 200, 
               duotone: {
                 highlight: "#3c4989",
                 shadow: "#3c4989",
@@ -114,7 +127,6 @@ export default () => {
   const [isHovered, setIsHovered] = useState(false);
   const [pageIsVisible, setPageIsVisible] = useState(true);
   const onVisibilityChange = (isVisible) => {
-    console.log(isVisible)
     setPageIsVisible(isVisible)
   }
 
@@ -136,6 +148,7 @@ export default () => {
     isHovered, setIsHovered,
     onVisibilityChange,
     pageIsVisible,
-    isHovered
+    isHovered,
+    dataImage: dataImage.childImageSharp,
   }
 }

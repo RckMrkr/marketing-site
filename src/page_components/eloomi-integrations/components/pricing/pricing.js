@@ -8,9 +8,9 @@ export default () => {
   const { prices, setCurrency, currency } = usePricing();
   return (
     <section className="section">
-      <div className="container has-text-centered">
-        <h2 className="title is-dark is-2">Prices</h2>
-        <div className="columns">
+      <div className="container">
+        <h2 className="title is-dark is-2 has-text-centered">Prices</h2>
+        <div className="columns has-text-centered">
           <div className="column">
             <div>
               <button className={classname("button", styles.button, {[styles.isActive]: currency === 'Euro' })} onClick={() => setCurrency("Euro")}>€</button>
@@ -19,7 +19,7 @@ export default () => {
             </div>
           </div>
         </div>
-        <div className="columns">
+        <div className="columns is-variable is-8 is-medium">
           <div className="column">
             <h3 className={classname('title', 'is-3', styles.title )}>Migrate</h3>
             <h4 className={classname('subtitle', 'is-4', styles.subtitle)}>
@@ -40,10 +40,10 @@ export default () => {
             <h4 className={classname('subtitle', 'is-4', styles.subtitle)}>
               <Price prices={prices.monitoring} currency={currency} /> per year
             </h4>
-            <p>The code is done and we just need to make sure that it runs reliably. <b>You can do that if you already have the infrastructure for it, or we at InterOps can do it.</b> If you let us do it we will also monitor the integration in case anything breaks. That could be either something has changed from your systems or something has changed in eloomi's systems. Either way we will let you know. If the change has happened in the eloomi site of things we will, if possible, even fix it for you for no additional cost.</p>
+            <p>The code is done and we just need to make sure that it runs reliably. <b>You can do that if you already have the infrastructure for it, or you can let us do it.</b> If you let us do it we will also monitor the integration in case anything breaks. That could be either something has changed from your systems or something has changed in eloomi's systems. Either way we will let you know. If the change has happened in the eloomi site of things we will, if possible, even fix it for you for no additional cost.</p>
           </div>
         </div>
-        <p className="is-italic has-text-weight-bold">Prices in Dollars and Euro are estimates as invoices are sent in DKK</p>
+        <p className="is-italic has-text-weight-bold has-text-centered">Prices in Dollars and Euro are estimates as invoices are sent in DKK</p>
       </div>
     </section>
   )

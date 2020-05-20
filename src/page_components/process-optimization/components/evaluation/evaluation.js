@@ -3,6 +3,7 @@ import Time from '../../../../components/time';
 import TextTile from '../../../../components/textTile';
 import classname from 'classname';
 import Listing from '../../../../components/listing';
+import styles from './evaluation.module.sass';
 import { FaCheck, FaTimes, FaQuestion } from 'react-icons/fa'
 
 const errorBlurb = 'You can still consider automating to reduce risk of errors when doing manual tasks.';
@@ -39,7 +40,7 @@ const Certainly = (props) => (
 )
 
 const Slide = ({seconds, evaluation, icon: Icon, className, children, iconClass}) => (
-  <TextTile style={{paddingLeft:'5rem'}} textClasses={classname(className)}>
+  <TextTile parentClasses={[styles.evaluation]} textClasses={classname(className)}>
     <div className="columns">
       <Listing title={<span>You would save <Time seconds={seconds} /> { evaluation }</span>} iconClass={iconClass} icon={Icon} >
         { children }
