@@ -4,16 +4,15 @@ import useAboutInterOps from './hooks';
 import Tiles from '../../components/tiles'
 import TextTile from "../../components/textTile";
 import ImageTile from "../../components/imageTile";
-import BackgroundImage from 'gatsby-background-image'
 import ContactForm from '../../components/contactForm'
 import VerticalTile from '../../components/verticalTile'
 import HorizontalTile from '../../components/horizontalTile'
 
 const Contact = ({ location }) => {
-  const { hero } = useAboutInterOps();
-
+  const { hero, divider } = useAboutInterOps();
+  hero.style = {backgroundPositionY: '20%'}
   return (
-    <PageLayout location={location} hero={hero} title='About InterOps' subtitle="What do we believe in?">
+    <PageLayout location={location} hero={hero} title='InterOps' subtitle="What do we believe in?">
       <section className="section">
         <div className="container">
         <p className="title has-text-centered i" style={{marginBottom: '20px'}}>At InterOps we live by a few simple truths.</p>
@@ -57,7 +56,7 @@ const Contact = ({ location }) => {
                   <p className="has-text-centered subtitle is-3">We do not take on jobs where we believe we are not able to do a good job.</p>
                 </TextTile>
               </HorizontalTile>
-              <ImageTile imageProps={{...hero, style: {width: '100%'}}} />
+              <ImageTile imageProps={{...divider, style: {width: '60%'}}} imageBackground="#FFF" />
               <HorizontalTile>
                 <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-size-4', 'is-flex', 'is-vertical-center']}>
                   <p className="has-text-centered subtitle is-3">We do not take on very big projects</p>

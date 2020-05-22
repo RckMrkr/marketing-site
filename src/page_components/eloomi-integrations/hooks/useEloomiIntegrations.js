@@ -6,7 +6,12 @@ export default () => {
       query {
         hero: file(relativePath: { eq: "integration-hero.png" }) {
           childImageSharp {
-            fluid(quality: 80, maxWidth: 800) {
+            fluid(quality: 80, maxWidth: 707, 
+              duotone: {
+                highlight: "#3c4989",
+                shadow: "#3c4989",
+                opacity: 30
+              }) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -20,7 +25,7 @@ export default () => {
         },
         insights: file(relativePath: { eq: "eloomi-integrations/eloomi-performance.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 600) {
+            fluid(quality: 70, maxWidth: 564) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

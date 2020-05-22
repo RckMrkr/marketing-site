@@ -3,6 +3,7 @@ import Layout from "./layout/layout"
 import BackgroundImage from 'gatsby-background-image'
 
 const PageLayout = ({ children, location, hero, title, subtitle }) => {
+  console.log(hero)
   return (
     <Layout location={location}>
       <section className="hero is-medium">

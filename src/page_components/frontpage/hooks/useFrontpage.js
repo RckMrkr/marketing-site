@@ -4,7 +4,7 @@ export default () => {
   const { hero, eloomiLogo } = useStaticQuery(
     graphql`
       query {
-        hero: file(relativePath: { eq: "integration-hero.png" }) {
+        hero: file(relativePath: { eq: "frontpage/hero.jpg" }) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 707, 
               duotone: {

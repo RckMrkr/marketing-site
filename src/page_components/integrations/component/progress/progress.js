@@ -20,26 +20,15 @@ const states = [
 
 export default () => {
   const [state, setState] = useState(0);
-  const [dots, setDots] = useState(".");
+  const [dotCount, setDotCount] = useState(1);
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if(dots.length === 3){
-        setDots(".")
-      } else {
-        setDots(dots + ".");
-      }
+    const timeout = setTimeout(() => setDotCount((dotCount % 3) + 1), 200);
 
-      return () => clearTimeout(timeout);
-    }, 500)
-  },[dots])
+    return () => clearTimeout(timeout);
+    
+  },[dotCount])
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if(state < states.length - 1) {
-        setState(state + 1);
-      } else {
-        setState(0)
-      }
-    }, 5000)
+    const timeout = setTimeout(() => setState((state + 1) % states.length), 5000)
 
     return () => clearTimeout(timeout);
   },[state])
@@ -48,7 +37,7 @@ export default () => {
 
   return <div style={{width: '100%'}} className="">
       <progress style={{marginBottom: 0}} className={classname('progress', state === states.length - 1 ? 'is-danger' : 'is-success' )} value={progress} max="100">{progress}%</progress>
-      <span className="is-size-6 is-family-code">{text}{state !== states.length - 1 && dots}</span>
+      <span className="is-size-6 is-family-code">{text}{state !== states.length - 1 && ".".repeat(dotCount)}</span>
     </div>
 
 }

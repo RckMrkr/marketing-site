@@ -41,7 +41,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
-        features: [`fetch`, `Array.prototype.flat`, `Array.prototype.map`]
+        features: [`fetch`, `Array.prototype.flat`, `Array.prototype.map`, `String.prototype.repeat`]
       },
     },
     {

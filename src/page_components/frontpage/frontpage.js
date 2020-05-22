@@ -12,9 +12,9 @@ import { navigate, Link } from "gatsby"
 
 const Frontpage = ({ location }) => {
   const { hero, eloomi } = useFrontpage();
-
+  hero.style = {backgroundPositionY: '70%'};
   return (
-    <PageLayout location={location} hero={hero} title='A strong partner' subtitle='We will help all every step of the way'>
+    <PageLayout location={location} hero={hero} title='A strong partner' subtitle='We will help every step of the way'>
       <section className="section">
         <div className="container">
           <div className="columns is-centered">

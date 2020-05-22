@@ -1,12 +1,24 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
 export default () => {
-  const { hero } = useStaticQuery(
+  const { hero, divider } = useStaticQuery(
     graphql`
       query {
-        hero: file(relativePath: { eq: "integration-hero.png" }) {
+        hero: file(relativePath: { eq: "about-interops/hero.jpg" }) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 707, 
+              duotone: {
+                highlight: "#3c4989",
+                shadow: "#3c4989",
+                opacity: 30
+              }) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        },
+        divider: file(relativePath: { eq: "about-interops/divider.jpg" }) {
+          childImageSharp {
+            fluid(quality: 80, maxWidth: 600, 
               duotone: {
                 highlight: "#3c4989",
                 shadow: "#3c4989",
@@ -21,6 +33,7 @@ export default () => {
   )
 
   return {
-    hero: {fluid: hero.childImageSharp.fluid },
+    hero: hero.childImageSharp,
+    divider: divider.childImageSharp,
   }
 }
