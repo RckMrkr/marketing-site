@@ -1,8 +1,8 @@
 import React from "react"
 
-import logoLarge from './../images/interops-logo-large.svg';
-import logoMedium from './../images/interops-logo-medium.svg';
-import logoSmall from './..//images/interops-logo-small.svg';
+import logoLarge from './../images/interops-logo.svg';
+import logoMedium from './../images/interops-logo.svg';
+import logoSmall from './..//images/interops-logo.svg';
 
  const imageMapping = {
    small: logoSmall,

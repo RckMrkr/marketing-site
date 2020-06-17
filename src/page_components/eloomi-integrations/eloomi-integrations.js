@@ -9,7 +9,7 @@ import Slider from '../../components/slider';
 import Pricing from './components/pricing';
 import ContactForm from '../../components/contactForm';
 import Img from 'gatsby-image'
-import interopsLarge from '../../images/interops-logo-large.svg'
+import interopsLarge from '../../images/interops-logo.svg'
 import {FaTimes} from 'react-icons/fa'
 
 const slides = [

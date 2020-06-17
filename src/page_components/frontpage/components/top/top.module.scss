@@ -1,0 +1,190 @@
+@import './../../../../styles/variables/all.scss';
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+
+.wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  margin-bottom: 200px;
+  width: 100%;
+  @include from($desktop) {
+    height: 80vh;
+    padding-top: 65px;
+  }
+
+  &.is-active {
+    @include until($desktop) {
+      padding-top: 76px;
+      height: 60vh;
+    }
+  }
+}
+.navbar-start {
+  margin-top: 32px;
+  @include until($desktop) {
+    margin-top: 0;
+    flex-direction: column;
+    display: flex;
+    .navbar-item {
+      padding: 20px 0;
+    }
+  }
+}
+
+.navbar-start .navbar-item {
+  display: inline;
+  @include from($desktop) {
+    padding: 0 24px;
+  }
+  @include from($widescreen) {
+    padding: 0 32px;
+  }
+}
+
+.navbar-start a, .navbar-start button {
+  font-weight: 600;
+  font-family: Barlow;
+  color: #FFFFFF;
+  letter-spacing: 0.15px;
+  color: #FFF;
+  font-size: 18px;
+}
+
+.navbar-start a:hover, .navbar-start .is-active {
+  padding-bottom: 8px;
+  border-bottom: solid #7500F9 3px;
+}
+
+.hero {
+  margin-top: 52px;
+  width: calc(100% - 40px);
+  height: 60vh;
+  @include until($desktop){
+    margin-top: 10px;
+    height: 50vh;
+  }
+  
+  .text {
+    position: absolute;
+    bottom: 10%;
+    color: #FFF;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    .title {
+      font-weight: bold;
+      font-size: 48px;
+      letter-spacing: 0.4px;
+      margin-bottom: 1rem;
+      color: #FFF;
+    }
+    .subtitle{
+      font-weight: normal;
+      font-size: 24px;
+      letter-spacing: 0.2px;
+      color: #FFF;
+      margin-top: 0;
+    }
+  }
+}
+  
+.navbar {
+  color: #FFF;
+  @include from($desktop) {
+    display: flex;
+    flex-direction: column;
+  }
+  &:not(.is-active){
+    background: transparent !important;
+  }
+  @include until($desktop) {
+    &.is-active {
+      position: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow:hidden;
+      z-index: 100;
+      margin-bottom: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .navbar-brand {
+    justify-content: center;
+    @include until($desktop) {
+      justify-content: flex-start;
+    }
+    img {
+      height: 60px;
+      width: 230px;
+      max-height: 3.75rem;
+      @include from($desktop) {
+        max-height: unset;
+        height: 72px;
+      }
+    }
+  }
+  .navbar-menu {
+    @include until($desktop) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .burger {
+    $slice-height: 5px;
+    $slice-space: 3px;
+    background-color: #000;
+    border-radius: 100%;
+    position: fixed;
+    right: 12px;
+    top: 18px;
+    z-index: 99;
+    width: 2.5rem;
+    height: 2.5rem;
+    span {
+      border-radius: 5px;
+      width: 24px;
+      height: $slice-height;
+      left: 8px;
+    }
+    span:nth-child(1) {
+      $test: (3 * $slice-height + 2 * $slice-space) / 2;
+      top: calc(50% - #{$test});
+      &.is-active {
+          transform: translateY(8px) rotate(45deg);
+      }
+    }
+    span:nth-child(2) {
+      $test: $slice-height / 2;
+      top: calc(50% - #{$test});
+      &.is-active {
+          opacity: 0;
+      }
+    }
+    span:nth-child(3) {
+      $test: (3 * $slice-height + 2 * $slice-space) / 2 - $slice-height;
+      top: calc(50% + #{$test});
+      &.is-active {
+          transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+    &.is-active {
+      span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+      }
+      span:nth-child(2) {
+          opacity: 0;
+      }
+      span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+}
+

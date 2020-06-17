@@ -1,0 +1,12 @@
+.button {
+  border-radius: 8px;
+  padding: 8px 16px 10px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+.button.warning {
+  background-color: #FF9237;
+  border-radius: 8px;
+  color: #FFFFFF;
+}

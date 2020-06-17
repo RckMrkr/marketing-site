@@ -1,97 +1,19 @@
 @import './variables/all.scss';
 
-.section.is-dark {
-  background-color: $dark;
-  color: $cloud;
-}
-
-.section.is-dark .label {
-  color: $cloud;
-}
-
-.section.is-dark .title {
-  color: $cloud;
-}
-
-.section.is-warning {
-  background-color: $warning;
-  color: $cloud;
-}
-.section.is-warning .title {
-  color: #FFF;
-}
-
-.title.is-dark {
-  color: $dark;
-}
-
-.is-vertical-center {
-  align-items: center !important;
-}
-.is-horizontal-center {
-  justify-content: center !important;
-}
-
-.has-text-macaroon {
-  color: $macaroon !important;
-}
-.select.is-full, .select.is-full select {
-  width: 100%;
-}
-button.navbar-burger {
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-  outline: 0
-}
-.button.is-loading:after{
-  border-radius: 5000px;
-}
-.box.is-success {
-  background-color: $success;
-  color: #FFF;
-}
-.subtitle.is-success, .title.is-success {
-  color: $success;
-}
-.subtitle.is-white, .title.is-white {
-  color: #FFF !important;
-}
-.subtitle.is-black, .title.black {
-  color: #000 !important;
-}
-.outlined {
-  color: white;
-  text-shadow: 0 0 1px #000,
-}
-
-
-.box.is-danger {
-  background-color: $danger;
-  color: #FFF;
-}
-
-.section--alt {
-  background-color: $primary;
-  color: $white;
-}
-
-.button.is-success:hover {
-  background-color: transparent;
-  color: $success;
-  border: 1px solid $success
-}
-
-.tile.is-centered {
-  display: flex;
-  flex-direction: column;
+.navbar .navbar-start {
+  flex-grow: 1;
   justify-content: center;
+  align-items: center;
 }
 
-.is-cloud {
-  color: #E4E5E0;
+.container {
+  @include until($desktop){
+    margin: 0 20px;
+  }
 }
 
-svg.is-success {
-  color: $success;
+html.small-hidden-overflow {
+  @include until($desktop){
+    overflow:hidden;
+  }
 }

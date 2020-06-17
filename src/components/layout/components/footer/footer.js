@@ -1,5 +1,5 @@
 import React from "react"
-import logo from '../../../../images/interops-logo-large.svg'
+import logo from '../../../../images/interops-logo.svg'
 import styles from './footer.module.css'
 
 const Image = () => {

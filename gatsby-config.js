@@ -53,7 +53,7 @@ module.exports = {
         background_color: `#2e96d3`,
         theme_color: `#2e96d3`,
         display: `minimal-ui`,
-        icon: `src/images/interops-logo-small.svg`, // This path is relative to the root of the site.
+        icon: `src/images/interops-logo.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -61,8 +61,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Manrope`,
-            variants: [`300`,`400`]
+            family: `Barlow`,
+            variants: [`400`, `600`, `700`]
           },
           {
             family: `Roboto`,

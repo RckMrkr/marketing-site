@@ -1,17 +1,19 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
 export default () => {
-  const { hero, eloomiLogo } = useStaticQuery(
+  const { frontImage, backImage } = useStaticQuery(
     graphql`
       query {
-        hero: file(relativePath: { eq: "frontpage/hero.jpg" }) {
+        frontImage: file(relativePath: { eq: "frontpage/front-image.png" }) {
           childImageSharp {
-            fluid(quality: 80, maxWidth: 707, 
-              duotone: {
-                highlight: "#3c4989",
-                shadow: "#3c4989",
-                opacity: 30
-              }) {
+            fluid(quality: 80, maxWidth: 707) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        },
+        backImage: file(relativePath: { eq: "frontpage/back-image.png" }) {
+          childImageSharp {
+            fluid(quality: 80, maxWidth: 707) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -28,7 +30,7 @@ export default () => {
   )
 
   return {
-    hero: hero.childImageSharp,
-    eloomi: eloomiLogo.childImageSharp,
+    backImage: backImage.childImageSharp,
+    frontImage: frontImage.childImageSharp,
   }
 }

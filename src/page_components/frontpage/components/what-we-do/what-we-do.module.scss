@@ -1,0 +1,26 @@
+.what-we-do {
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+.title {
+  color: #000;
+}
+
+p + h4.title {
+  margin-top: 64px;
+}
+
+.back-image {
+  width: 75%;
+  position: absolute;
+  top: 0;
+  right: 0
+}
+
+.front-image {
+  width: 60%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
