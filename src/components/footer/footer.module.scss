@@ -1,0 +1,88 @@
+@import './../../styles/variables/all.scss';
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+
+.footer {
+  color: #FFF;
+  height: 180px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    display: inline-block;
+    height: 96px;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  & > div > div {
+    margin: 0 20px;
+  }
+  a {
+    color: #FFF;
+    text-decoration: underline;
+  }
+  @include until($desktop){
+    flex-direction: column;
+  }
+}
+
+.container, .container div {
+    text-align: center;
+}
+
+.left {
+  display: inline-block;
+  flex: 1;
+  
+}
+
+.left div {
+  float: right;  
+}
+
+.right {
+  display: inline-block;
+  flex: 1;
+}
+
+.right div {
+  float: left;
+}
+
+.center {
+  display: inline-block;
+}
+@include until($desktop){
+  .right div, .left div {
+    float: none;
+    text-align: left;
+    width: auto;
+    white-space: nowrap;
+  }
+  .footer {
+    height: 180px;
+    padding: 20px;
+  }
+  .container {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    align-items: start;
+    transform: translateX(-125px);
+    width: auto;
+  }
+  .center {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    transform: translateX(-100px);
+  }
+}
