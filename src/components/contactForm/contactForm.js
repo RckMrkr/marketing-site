@@ -2,6 +2,9 @@ import React from 'react';
 import classname from 'classname';
 import useContactForm from './hooks';
 import { Element } from 'react-scroll';
+import backgroundImage from '../../images/frontpage/top-background.svg'
+import styles from './contactForm.module.scss'
+import Button from '../button'
 
 const encode = (data) => {
   return Object.keys(data)
@@ -9,7 +12,7 @@ const encode = (data) => {
       .join("&");
 }
 
-export default ({from, isDark}) => {
+export default ({from}) => {
   const {
     name, setName,
     email, setEmail,
@@ -40,11 +43,11 @@ export default ({from, isDark}) => {
   const setProperty = setter => event => setter(event.target.value);
   return (
     <Element name={contactElementName}>
-    <section className={classname("section", {"is-dark": isDark})}>
+    <section className={classname("section", styles.section)} style={{backgroundImage: `url(${backgroundImage})`}}>
       <div className="container">
-        <h4 className="title has-text-centered">How may we help?</h4>
-        <div className="columns is-horizontal-center">
-          <div className="column is-two-thirds">
+        <h4 className="title has-text-centered">How can we help?</h4>
+        <div className="columns is-centered is-horizontal-center">
+          <div className="column is-half">
             <form onSubmit={handleSubmit}
                 name="contact"
                 method="post"
@@ -57,7 +60,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormName'>Name</label>
                     <div className="control">
-                      <input name="name" id="contactFormName" onChange={setProperty(setName)} value={name} className="input" type="text" />
+                      <input placeholder="Type in your name" name="name" id="contactFormName" onChange={setProperty(setName)} value={name} className="input" type="text" />
                     </div>
                   </div>
                 </div>
@@ -65,7 +68,7 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormEmail'>E-mail</label>
                     <div className="control">
-                      <input name="email" id="contactFormEmail" onChange={setProperty(setEmail)} value={email} className="input" type="email" />
+                      <input placeholder="Add your email" name="email" id="contactFormEmail" onChange={setProperty(setEmail)} value={email} className="input" type="email" />
                     </div>
                   </div>
                 </div>
@@ -75,17 +78,15 @@ export default ({from, isDark}) => {
                   <div className="field">
                     <label className="label" htmlFor='contactFormMessage'>Message</label>
                     <div className="control">
-                      <textarea placeholder="Tell us a bit about what you need, so we are a bit better prepared when we contact you." name="message" id="contactFormMessage" onChange={setProperty(setMessage)} className="textarea" value={message}></textarea>
+                      <textarea placeholder="What are you looking for?" name="message" id="contactFormMessage" onChange={setProperty(setMessage)} className="textarea" value={message}></textarea>
                     </div>
                   </div>
               </div></div>
               <div className="columns">
                 <div className="column">
-                  <div className="field is-flex is-horizontal-center">
-                    <p className="control">
-                      <button type="submit" className={classname("button", "is-success", {"is-loading": isSubmitting, 'disabled': isSubmitting})}>
-                        Send
-                      </button>
+                  <div className="field">
+                    <p className="control has-text-centered">
+                      <Button type='warning'>Send</Button>
                     </p>
                   </div>
                 </div>

@@ -6,18 +6,14 @@
 .wrapper {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
-  margin-bottom: 200px;
   width: 100%;
   @include from($desktop) {
-    height: 80vh;
     padding-top: 65px;
   }
 
   &.is-active {
     @include until($desktop) {
       padding-top: 76px;
-      height: 60vh;
     }
   }
 }
@@ -188,3 +184,15 @@
   }
 }
 
+.background {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  height: calc(60vh + 277px - 100px);
+  @include until($desktop){
+    height: calc(50vh + 76px - 20px);
+  }
+}
+
+// 212px

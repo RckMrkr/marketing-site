@@ -7,12 +7,12 @@ import classname from 'classname'
 import backgroundImage from '../../../../images/frontpage/top-background.svg'
 import Button from '../../../../components/button';
 import useTop from './hooks/useTop';
-import Img from 'gatsby-image'
 
 export default ({location, topImage, backImage}) => {
   const {mobileMenuIsShown, setMobileMenuIsShown, hero} = useTop()
   return (
-    <div className={classname(styles.wrapper, 'has-text-centered', {[styles.isActive]: mobileMenuIsShown})} style={{backgroundImage: `url(${backgroundImage})`}}>
+    <div className={classname(styles.wrapper, 'has-text-centered', {[styles.isActive]: mobileMenuIsShown})}>
+      <div className={classname(styles.background, {[styles.isActive]: mobileMenuIsShown})} style={{backgroundImage: `url(${backgroundImage})`}}></div>
       <nav className={classname('navbar', styles.navbar, {[styles.isActive]: mobileMenuIsShown})} style={{backgroundImage: `url(${backgroundImage})`}}>
         <div className={classname('navbar-brand', styles.navbarBrand)}>
           <Link className="navbar-item" to="/">

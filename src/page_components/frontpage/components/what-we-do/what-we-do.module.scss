@@ -1,6 +1,14 @@
+@import './../../../../styles/variables/all.scss';
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+
 .what-we-do {
-  margin-top: 100px;
   overflow: hidden;
+  margin-top: 60px;
+  @include from($tablet){
+    margin-top: 100px;
+  }
 }
 
 .title {
@@ -12,15 +20,39 @@ p + h4.title {
 }
 
 .back-image {
-  width: 75%;
-  position: absolute;
+  width: 70%;
+  min-width: 200px;
+  position: relative;
   top: 0;
-  right: 0
+  float: right;
 }
 
 .front-image {
   width: 60%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  min-width: 200px;
+  position: relative;
+  bottom: 0px;
+  float: left;
+  margin-top: -300px;
+  @include until($widescreen){
+    margin-top: -200px;
+  }
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.offer {
+  margin: 40px 0 90px;
+  @include until($tablet){
+    margin-bottom: 20px;
+  }
+}
+
+.extra {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }

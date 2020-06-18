@@ -1,0 +1,64 @@
+@import './../../../../styles/variables/all.scss';
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+
+.boxes {
+  
+  margin-top: 120px;
+  margin-bottom: 120px;
+  @include until($desktop){
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+.columns {
+  @include until($desktop){
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.column {
+  @include from($tablet){
+    width: $tablet;
+  }
+}
+
+.text {
+  color: #FFFFFF;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  bottom: 8%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  
+  h4 {
+    font-family: 'Barlow';
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 0.27px;
+    @include until($tablet){
+      font-size: 24px;
+    }
+  }
+
+  p {
+    font-family: 'Barlow';
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 5px;
+    letter-spacing: 0.15px;
+    @include until($tablet){
+      font-size: 14px;
+    }
+    a {
+      color: #FFF;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}

@@ -6,14 +6,14 @@ export default () => {
       query {
         frontImage: file(relativePath: { eq: "frontpage/front-image.png" }) {
           childImageSharp {
-            fluid(quality: 80, maxWidth: 707) {
+            fluid(quality: 80, maxWidth: 460) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         },
         backImage: file(relativePath: { eq: "frontpage/back-image.png" }) {
           childImageSharp {
-            fluid(quality: 80, maxWidth: 707) {
+            fluid(quality: 80, maxWidth: 480) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
