@@ -48,7 +48,7 @@
   font-size: 18px;
 }
 
-.navbar-start a:hover, .navbar-start .is-active {
+.navbar-start a:not(.button):hover, .navbar-start .is-active {
   padding-bottom: 8px;
   border-bottom: solid #7500F9 3px;
 }
@@ -88,6 +88,7 @@
   
 .navbar {
   color: #FFF;
+  background-image: url('./../../../../images/frontpage/top-background.svg');
   @include from($desktop) {
     display: flex;
     flex-direction: column;
@@ -186,6 +187,7 @@
 
 .background {
   position: absolute;
+  background-image: url('./../../../../images/frontpage/top-background.svg');
   top:0;
   left: 0;
   right: 0;

@@ -1,28 +1,37 @@
 @import './../../../../styles/variables/all.scss';
 
 .button.is-active {
-  background: $success;
+  background: $warning;
   color: #FFF;
-  border: 1px solid $success;
+  border: 1px solid $warning;
 }
 .button.is-active {
-  background: $success;
+  background: $warning;
   color: #FFF;
 }
 .button.is-active:hover {
   cursor: default;
 }
 .button:hover {
-  background: $success;
+  background: $warning;
   color: #FFF;
 }
 .button.is-active:focus, .button.is-active:active{
-  border: 1px solid $success;
+  border: 1px solid $warning;
 }
 .button:active {
-  border-color: $success;
+  border-color: $warning;
 }
 
 .title:not(.is-spaced) + .subtitle {
   margin-top: -0.7rem;
+}
+
+.buttons {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.price-caveat {
+  margin-top: 30px;
 }

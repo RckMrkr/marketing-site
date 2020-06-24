@@ -1,12 +1,12 @@
 import React from "react"
-import PageLayout from "../../components/pageLayout"
+import Layout from "../../components/layout"
 import useContact from './hooks';
 
 const Contact = ({ location }) => {
   const { hero } = useContact();
 
   return (
-    <PageLayout location={location} hero={hero} title='Contact' subtitle='Contact us'>
+    <Layout location={location} hero={hero} title='Contact' subtitle='Contact us'>
       <section className="section">
         <div className="container">
         <p style={{marginBottom: '20px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar id justo eget interdum. Donec purus tellus, ultricies a arcu nec, auctor interdum felis. Nunc ac nunc turpis. Quisque tempus metus sed euismod sollicitudin. Duis dignissim pellentesque tortor, accumsan placerat orci cursus ut. Quisque est ipsum, pellentesque ut sem sed, dictum facilisis dolor. Nulla turpis risus, commodo nec ornare non, laoreet ac justo. Vivamus eleifend elit et lectus blandit vulputate. Duis at pellentesque sem, accumsan placerat ex. Morbi vitae vestibulum velit. Suspendisse tempor ac metus non lacinia. Phasellus laoreet arcu tempor, congue sem vitae, iaculis lacus.</p>
@@ -16,7 +16,7 @@ const Contact = ({ location }) => {
         <p style={{marginBottom: '20px'}}>Aenean lectus diam, pretium quis tortor a, pharetra semper lectus. Nulla egestas aliquet urna, eget porta ante porta ut. Integer auctor ut velit et maximus. Donec sed augue in velit varius facilisis. Phasellus dolor nulla, volutpat vitae fringilla eu, varius nec lectus. Sed quis urna et sapien dignissim auctor. Aenean vulputate, risus ac egestas rutrum, dui diam molestie enim, nec laoreet eros augue eget metus.</p>
         </div>
       </section>
-    </PageLayout>
+    </Layout>
   )
 }
 

@@ -17,9 +17,9 @@ module.exports = {
         "Euro": 3950,
       },
       monitoring: {
-        "DKK": 10000,
+        "DKK": 9500,
         "Dollars": 1450,
-        "Euro": 1340,
+        "Euro": 1275,
       }
     },
   },
@@ -43,6 +43,14 @@ module.exports = {
       options: {
         features: [`fetch`, `Array.prototype.flat`, `Array.prototype.map`, `String.prototype.repeat`]
       },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,

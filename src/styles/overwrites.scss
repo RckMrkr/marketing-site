@@ -17,3 +17,20 @@ html.small-hidden-overflow {
     overflow:hidden;
   }
 }
+
+.has-small-spacing {
+  letter-spacing: 0.27px;
+}
+
+.box {
+  border-radius: 10px
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.section {
+  padding-top: 75px;
+  padding-bottom: 110px;
+}

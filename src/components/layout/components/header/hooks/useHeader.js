@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import useHeaderMenu from './useHeaderMenu'
+import useHeaderImages from './useHeaderImages'
 import { graphql, useStaticQuery } from 'gatsby'
 
-export default (defaultMenuState) => {
-  const [isMenuShown, setIsMenuShown] = useState(defaultMenuState);
-  const toggleIsMenuShown = () => setIsMenuShown(!isMenuShown);
-
+export default () => {
+  const { mobileMenuIsShown, setMobileMenuIsShown} = useHeaderMenu();
+  const { hero } = useHeaderImages();
+  
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -17,5 +18,10 @@ export default (defaultMenuState) => {
     `
   )
 
-  return { isMenuShown, toggleIsMenuShown, contactElementName: site.siteMetadata.contactScrollElementName}
+  return {
+    mobileMenuIsShown,
+    setMobileMenuIsShown,
+    hero,
+    contactElementName: site.siteMetadata.contactScrollElementName,
+  }
 }

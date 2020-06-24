@@ -1,0 +1,68 @@
+@import './../../../../styles/variables/all.scss';
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+
+.evaluation {
+  padding-left: 5rem !important;
+  background-color: #EFF6F2;
+
+  @include mobile {
+    padding-left: 0 !important;
+  }
+}
+$icon-background-width: 80px;
+$icon-background-height: $icon-background-width * 1.0375;
+.icon-background {
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  background: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: $icon-background-width;
+  height: $icon-background-height;
+  background-position-x: right;
+  box-sizing: border-box;
+
+  &.is-warning g {
+    fill: orange
+  }
+
+  &.is-danger g {
+    fill: red
+  }
+
+  &.is-liar g {
+    fill: #7500F9
+  }
+}
+
+.title {
+  width: calc(100% - #{$icon-background-width});
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.icon {
+  $icon-to-background-ratio: 0.6;
+  $width: $icon-background-width * $icon-to-background-ratio;
+  $height: $icon-background-height * $icon-to-background-ratio;
+  position: absolute;
+  top: ($icon-background-height - $height) / 2;
+  right: ($icon-background-width - $width) / 2;
+  fill: #FFF;
+  width: $width;
+  height: $height;
+}
+
+.time {
+  display: block;
+  @include from($desktop){
+    display: block;
+  }
+}

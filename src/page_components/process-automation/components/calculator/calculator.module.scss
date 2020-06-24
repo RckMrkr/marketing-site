@@ -1,0 +1,27 @@
+.section {
+  padding-top: 75px;
+  padding-bottom: 111px;
+}
+.box {
+  margin: 10px;
+}
+.boxes {
+  margin-top: 48px
+}
+.box:first-child {
+  background-color: #F6F5EF;
+}
+.box:last-child {
+  background-color: #EFF6F2;
+}
+
+.half-input {
+  width: 50%;
+}
+.full-input {
+  width: 100%;
+}
+.times {
+  line-height: 40px;
+  margin-left: 10px;
+}

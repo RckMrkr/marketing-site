@@ -8,12 +8,14 @@
 import React from "react"
 import Footer from '../footer';
 import Header from "./components/header"
+import ContactForm from './../contactForm'
 
-const Layout = ({ children, location }) => {
+const Layout = ({children, ...props}) => {
   return (
     <>
-      <Header location={location} />
+      <Header {...props} />
       {children}
+      <ContactForm from={props.location.pathname} />
       <Footer />
     </>
   )

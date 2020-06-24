@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
 export default () => {
-  const { frontImage, backImage } = useStaticQuery(
+  const { frontImage, backImage, site } = useStaticQuery(
     graphql`
       query {
         frontImage: file(relativePath: { eq: "frontpage/front-image.png" }) {
@@ -11,10 +11,10 @@ export default () => {
             }
           }
         },
-        backImage: file(relativePath: { eq: "frontpage/back-image.png" }) {
+        backImage: file(relativePath: { eq: "frontpage/back-image.webp" }) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 480) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         },
@@ -25,6 +25,11 @@ export default () => {
             }
           }
         },
+        site {
+          siteMetadata {
+            contactScrollElementName
+          }
+        },
       }
     `
   )
@@ -32,5 +37,6 @@ export default () => {
   return {
     backImage: backImage.childImageSharp,
     frontImage: frontImage.childImageSharp,
+    contactElementName: site.siteMetadata.contactScrollElementName,
   }
 }

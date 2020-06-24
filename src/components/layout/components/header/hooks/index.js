@@ -1,1 +1,1 @@
-export { default } from './useHeader'
+export { default } from './useHeader';

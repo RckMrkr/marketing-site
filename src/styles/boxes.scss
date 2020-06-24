@@ -1,0 +1,62 @@
+@import './variables/all.scss';
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+.columns {
+  align-items: center;
+  margin: 32px auto;
+
+  @include from($tablet){
+    .column.left > * {
+      padding-right: 50px
+    }
+    
+    .column.right > * {
+      padding-left: 50px
+    }
+  }
+
+  @include from($desktop){
+
+    .column.left > * {
+      padding-right: 100px
+    }
+    
+    .column.right > * {
+      padding-left: 100px
+    }
+  }
+}
+
+@include until($tablet){
+  .columns:nth-child(even) {
+    display:flex;
+    flex-direction: column-reverse;
+    .column {
+      height: auto;
+      width: 100%;
+      img {
+        height: auto;
+      }
+    }
+  }
+}
+
+.image-text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 50px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.offer {
+  margin-top: 20px;
+  font-weight: 600;
+}

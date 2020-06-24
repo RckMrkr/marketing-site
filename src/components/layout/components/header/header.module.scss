@@ -1,0 +1,214 @@
+@import './../../../../styles/variables/all.scss';
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+
+.wrapper {
+  background-color: $body-background-color;
+  width: 100%;
+  @include from($desktop) {
+    padding-top: 16px;
+  }
+
+  &.is-active {
+    @include until($desktop) {
+      padding-top: 76px;
+      .navbar-start a {
+        color: #FFF;
+      }
+    }
+  }
+}
+.navbar-start {
+  margin-top: 0;
+  @include until($desktop) {
+    flex-direction: column;
+    display: flex;
+    .navbar-item {
+      padding: 20px 0;
+    }
+  }
+}
+
+.navbar-start .navbar-item {
+  display: inline;
+  @include from($desktop) {
+    padding: 0 24px;
+  }
+  @include from($widescreen) {
+    padding: 0 32px;
+  }
+}
+
+.navbar-start a, .navbar-start button {
+  font-weight: 600;
+  font-family: Barlow;
+  letter-spacing: 0.15px;
+  color: #0A021F;
+  font-size: 18px;
+}
+
+.navbar-start a:not(.button):hover, .navbar-start .is-active {
+  padding-bottom: 8px;
+  border-bottom: solid #7500F9 3px;
+}
+$hero-height: 40vh;
+$hero-height-small: 30vh;
+.hero {
+  margin-top: 72px;
+  width: calc(100% - 40px);
+  height: $hero-height;
+  @include until($desktop){
+    margin-top: 20px;
+    height: $hero-height-small;
+  }
+  
+  .text {
+    position: absolute;
+    bottom: 10%;
+    color: #FFF;
+    left: 50%;
+    width: calc(100% - 40px);
+    transform: translate(-50%);
+    .title {
+      font-weight: bold;
+      font-size: 2.5rem;
+      letter-spacing: 0.4px;
+      margin-bottom: 1rem;
+      color: #FFF;
+    }
+    .subtitle{
+      font-weight: normal;
+      font-size: 1.4rem;
+      letter-spacing: 0.2px;
+      color: #FFF;
+      margin-top: 0;
+    }
+  }
+}
+
+img {
+  @include from($desktop){
+    &.active {
+      display:none;
+    }
+  }
+}
+  
+.navbar {
+  background-image: url('./../../../../images/frontpage/top-background.svg');
+  color: #0A021F;
+  @include from($desktop) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background: transparent !important;
+  }
+  &:not(.is-active){
+    background: transparent !important;
+  }
+  
+  @include until($desktop) {
+    &.is-active {
+      position: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow:hidden;
+      z-index: 100;
+      margin-bottom: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      img.inactive {
+        display:none
+      }
+    }
+    &:not(.is-active){
+      img.active {
+        display: none;
+      }
+    }
+  }
+
+  .navbar-brand {
+    justify-content: center;
+    margin-bottom: 20px;
+    @include until($desktop) {
+      margin-bottom: 0;
+      justify-content: flex-start;
+    }
+    img {
+      height: 40px;
+      max-height: 3.75rem;
+      @include from($desktop) {
+        max-height: unset;
+        height: 72px;
+      }
+    }
+  }
+
+  .burger {
+    $slice-height: 5px;
+    $slice-space: 3px;
+    background-color: #000;
+    border-radius: 100%;
+    position: fixed;
+    right: 12px;
+    top: 8px;
+    z-index: 99;
+    width: 2.5rem;
+    height: 2.5rem;
+    span {
+      border-radius: 5px;
+      width: 24px;
+      height: $slice-height;
+      left: 8px;
+    }
+    span:nth-child(1) {
+      $test: (3 * $slice-height + 2 * $slice-space) / 2;
+      top: calc(50% - #{$test});
+      &.is-active {
+          transform: translateY(8px) rotate(45deg);
+      }
+    }
+    span:nth-child(2) {
+      $test: $slice-height / 2;
+      top: calc(50% - #{$test});
+      &.is-active {
+          opacity: 0;
+      }
+    }
+    span:nth-child(3) {
+      $test: (3 * $slice-height + 2 * $slice-space) / 2 - $slice-height;
+      top: calc(50% + #{$test});
+      &.is-active {
+          transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+    &.is-active {
+      span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+      }
+      span:nth-child(2) {
+          opacity: 0;
+      }
+      span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  background-image: url('./../../../../images/frontpage/top-background.svg');
+  left: 0;
+  right: 0;
+  height: calc(#{$hero-height} + 52px - 100px);
+  @include until($desktop){
+    height: calc(#{$hero-height-small} - 20px);
+  }
+}
+
+// 212px

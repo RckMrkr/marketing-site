@@ -1,0 +1,9 @@
+@import './../../styles/variables/all.scss';
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+@import "./../../styles/boxes.scss";
+
+.section {
+  padding-bottom: 96px;
+}

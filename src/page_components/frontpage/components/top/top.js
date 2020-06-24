@@ -4,16 +4,16 @@ import styles from './top.module.scss';
 import { Link } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
 import classname from 'classname'
-import backgroundImage from '../../../../images/frontpage/top-background.svg'
 import Button from '../../../../components/button';
 import useTop from './hooks/useTop';
+import { Link as ScrollLink } from 'react-scroll'
 
-export default ({location, topImage, backImage}) => {
-  const {mobileMenuIsShown, setMobileMenuIsShown, hero} = useTop()
+export default ({location }) => {
+  const {mobileMenuIsShown, setMobileMenuIsShown, hero, contactElementName} = useTop()
   return (
     <div className={classname(styles.wrapper, 'has-text-centered', {[styles.isActive]: mobileMenuIsShown})}>
-      <div className={classname(styles.background, {[styles.isActive]: mobileMenuIsShown})} style={{backgroundImage: `url(${backgroundImage})`}}></div>
-      <nav className={classname('navbar', styles.navbar, {[styles.isActive]: mobileMenuIsShown})} style={{backgroundImage: `url(${backgroundImage})`}}>
+      <div className={classname(styles.background, {[styles.isActive]: mobileMenuIsShown})}></div>
+      <nav className={classname('navbar', styles.navbar, {[styles.isActive]: mobileMenuIsShown})}>
         <div className={classname('navbar-brand', styles.navbarBrand)}>
           <Link className="navbar-item" to="/">
             <img src={logo} alt="InterOps" />
@@ -37,13 +37,15 @@ export default ({location, topImage, backImage}) => {
               <Link className={classname({[styles.isActive]:location.pathname === "/eloomi-integrations"})} to="/eloomi-integrations">eloomi</Link>
             </div>
             <div className={classname('navbar-item', styles.navbarItem)}>
-              <Link className={classname({[styles.isActive]:location.pathname === "/process-optimization"})} to="/process-optimization">Process optimization</Link>
+              <Link className={classname({[styles.isActive]:location.pathname === "/process-automation"})} to="/process-automation">Process automation</Link>
             </div>
             <div className={classname('navbar-item', styles.navbarItem)}>
               <Link className={classname({[styles.isActive]:location.pathname === "/about-interops"})} to="/about-interops">About InterOps</Link>
             </div>
             <div className={classname('navbar-item', styles.navbarItem)}>
-              <Button type="warning">Contact</Button>
+              <ScrollLink className={styles.button} onClick={() => setMobileMenuIsShown(false)} spy smooth to={contactElementName}>
+                <Button type="warning">Contact</Button>
+              </ScrollLink>
             </div>
           </div>
         </div>

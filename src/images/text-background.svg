@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="580px" height="320px" viewBox="0 0 580 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Pic</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="580" height="320"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-4" x="0" y="0" width="580" height="320"></rect>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-02---Subpage" transform="translate(-230.000000, -1136.000000)">
+            <g id="Content" transform="translate(230.000000, 752.000000)">
+                <g id="Default-text" transform="translate(0.000000, 384.000000)">
+                    <g id="Pic">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Pic-matte" fill="#7500F9" xlink:href="#path-1"></use>
+                        <g id="Overlay" mask="url(#mask-2)">
+                            <use fill-opacity="0.24" fill="#0A021F" xlink:href="#path-4"></use>
+                            <use fill="url(#linearGradient-3)" style="mix-blend-mode: multiply;" xlink:href="#path-4"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

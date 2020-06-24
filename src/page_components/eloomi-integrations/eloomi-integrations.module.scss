@@ -1,0 +1,30 @@
+@import '../../styles/boxes.scss';
+
+.notification {
+  padding-right: 1.5rem
+}
+
+.is-padded {
+  padding: 15%;
+}
+.is-padded-small {
+  padding: 10%;
+}
+
+.text-background{
+  background-image: url('./../../images/process-automation/text-background.webp');
+  background-size: cover;
+  color: #FFF;
+  h2 {
+    color: #FFF;
+
+  }
+
+  svg polygon {
+    fill: #FFF;
+  }
+}
+
+.top-margin {
+  margin-top: 65px;
+}

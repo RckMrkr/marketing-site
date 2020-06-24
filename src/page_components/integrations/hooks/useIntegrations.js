@@ -14,8 +14,14 @@ export default () => {
     vimeoLogo,
     cloudinaryLogo,
     awsLogo,
+    plectoLogo,
+    salesLoftLogo,
     azureLogo,
     dataImage,
+    screensharing,
+    textBackground,
+    puzzle,
+    atComputer,
   } = useStaticQuery(
     graphql`
       query {
@@ -120,6 +126,48 @@ export default () => {
             }
           }
         },
+        screensharing: file(relativePath: { eq: "process-automation/screensharing.webp" }) {
+          childImageSharp {
+            fluid(quality: 80, maxWidth: 552) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        },
+        textBackground: file(relativePath: { eq: "process-automation/text-background.webp" }) {
+          childImageSharp {
+            fluid(quality: 80, maxWidth: 552) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        },
+        puzzle: file(relativePath: { eq: "integrations/startae-team-36Aai16fubc-unsplash.jpg" }) {
+          childImageSharp {
+            fluid(quality: 80, maxHeight: 304) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        },
+        atComputer: file(relativePath: { eq: "integrations/at-computer.jpg" }) {
+          childImageSharp {
+            fluid(quality: 80, maxHeight: 304) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        },
+        plectoLogo: file(relativePath: { eq: "integrations/logos/plecto.png" }) {
+          childImageSharp {
+            fixed(height:60) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        },
+        salesLoftLogo: file(relativePath: { eq: "integrations/logos/salesLoft.png" }) {
+          childImageSharp {
+            fixed(height:60) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        },
       }
     `
   )
@@ -144,11 +192,16 @@ export default () => {
       cloudinary: cloudinaryLogo.childImageSharp,
       aws: awsLogo.childImageSharp,
       azure: azureLogo.childImageSharp,
+      plecto: plectoLogo.childImageSharp,
+      salesLoft: salesLoftLogo.childImageSharp,
     },
     isHovered, setIsHovered,
     onVisibilityChange,
     pageIsVisible,
-    isHovered,
     dataImage: dataImage.childImageSharp,
+    screensharing: screensharing.childImageSharp,
+    textBackground: textBackground.childImageSharp,
+    puzzle: puzzle.childImageSharp,
+    atComputer: atComputer.childImageSharp
   }
 }

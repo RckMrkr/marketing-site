@@ -18,9 +18,9 @@ export default () => {
             }
           }
         },
-        eloomiScreenshot: file(relativePath: { eq: "frontpage/eloomi-screenshot.png" }) {
+        eloomiScreenshot: file(relativePath: { eq: "frontpage/eloomi-screenshot.webp" }) {
           childImageSharp {
-            fluid(quality: 80, maxWidth: 480) {
+            fluid(quality: 80, maxWidth: 580) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

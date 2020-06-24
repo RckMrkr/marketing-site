@@ -1,5 +1,5 @@
 import React from "react"
-import PageLayout from "../../components/pageLayout"
+import Layout from "../../components/layout"
 import useAboutInterOps from './hooks';
 import Tiles from '../../components/tiles'
 import TextTile from "../../components/textTile";
@@ -12,7 +12,7 @@ const Contact = ({ location }) => {
   const { hero, divider } = useAboutInterOps();
   hero.style = {backgroundPositionY: '20%'}
   return (
-    <PageLayout location={location} hero={hero} title='InterOps' subtitle="What do we believe in?">
+    <Layout location={location} hero={hero} title='InterOps' subtitle="What do we believe in?">
       <section className="section">
         <div className="container">
         <p className="title has-text-centered i" style={{marginBottom: '20px'}}>At InterOps we live by a few simple truths.</p>
@@ -70,8 +70,7 @@ const Contact = ({ location }) => {
           </Tiles>
         </div>
       </section>
-      <ContactForm isDark from='about-interops' />
-    </PageLayout>
+    </Layout>
   )
 }
 
