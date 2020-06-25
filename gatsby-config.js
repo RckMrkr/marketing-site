@@ -7,9 +7,9 @@ module.exports = {
     defaultCurrency: "Euro",
     prices: {
       migration: {
-        "DKK": 1500,
-        "Dollars": 220,
-        "Euro": 200,
+        "DKK": 850,
+        "Dollars": 130,
+        "Euro": 115,
       },
       integration: {
         "DKK": 29500,

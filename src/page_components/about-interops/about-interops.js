@@ -1,77 +1,52 @@
-import React from "react"
-import Layout from "../../components/layout"
+import React from "react";
+import Layout from "../../components/layout";
 import useAboutInterOps from './hooks';
-import Tiles from '../../components/tiles'
-import TextTile from "../../components/textTile";
-import ImageTile from "../../components/imageTile";
-import ContactForm from '../../components/contactForm'
-import VerticalTile from '../../components/verticalTile'
-import HorizontalTile from '../../components/horizontalTile'
+import styles from './about-interops.module.scss'
+import classname from 'classname'
+import Img from 'gatsby-image'
+import useProcessAutomation from './../process-automation/hooks'
 
-const Contact = ({ location }) => {
-  const { hero, divider } = useAboutInterOps();
+const AboutInterops = ({ location }) => {
+  const { robot } = useProcessAutomation();
+  const { hero, middleImage, topImage } = useAboutInterOps();
+
   hero.style = {backgroundPositionY: '20%'}
   return (
-    <Layout location={location} hero={hero} title='InterOps' subtitle="What do we believe in?">
-      <section className="section">
+    <Layout location={location} hero={hero} title='InterOps' subtitle="What is this company?">
+      <section className={classname("section is-small", styles.section)}>
         <div className="container">
-        <p className="title has-text-centered i" style={{marginBottom: '20px'}}>At InterOps we live by a few simple truths.</p>
-        <Tiles>
-          <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-size-4', 'is-vertical-center', 'is-flex']}>
-            <p className="has-text-centered subtitle is-4">People like doing a good job</p>
-          </TextTile>
-          <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-size-6', 'is-vertical-center', 'is-flex']}>
-            <p className="has-text-centered subtitle is-4">Our customers depend on us doing a good job</p>
-          </TextTile>
-          <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-size-6', 'is-vertical-center', 'is-flex']}>
-            <p className="has-text-centered subtitle is-4">Communication is hard</p>
-          </TextTile>
-        </Tiles>
-      </div>
-      </section>
-      <section className="section is-dark">
-        <div className="container">
-          <p className="title has-text-centered">Working from these truths lead to a few principles</p>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <Tiles>
-            <VerticalTile>
-              <HorizontalTile>
-                <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-size-4', 'is-flex', 'is-vertical-center']}>
-                  <p className="has-text-centered subtitle is-3">We do not take on jobs where we believe we are not able to do a good job.</p>
-                </TextTile>
-                <TextTile textClasses={['notification', 'is-dark', 'is-padded', 'is-size-6']}>
-                  <p style={{marginBottom: '10px'}}>We want to be proud of every single solution we deliver. We do that for our customers, for our employees and for the company.</p>
-                  <p>If we do not feel we would be able to live up the expectations of the customer, we will be more than happy to point them to a place where they have the capacity or the expertise to complete the job.</p>
-                </TextTile>
-              </HorizontalTile>
-              <HorizontalTile>
-                <TextTile textClasses={['notification', 'is-dark', 'is-padded', 'is-size-6']}>
-                  <p style={{marginBottom: '10px'}}>We want to be proud of every single solution we deliver. We do that for our customers, for our employees and for the company.</p>
-                  <p>If we do not feel we would be able to live up the expectations of the customer, we will be more than happy to point them to a place where they have the capacity or the expertise to complete the job.</p>
-                </TextTile>
-                <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-size-4', 'is-flex', 'is-vertical-center']}>
-                  <p className="has-text-centered subtitle is-3">We do not take on jobs where we believe we are not able to do a good job.</p>
-                </TextTile>
-              </HorizontalTile>
-              <ImageTile imageProps={{...divider, style: {width: '60%'}}} imageBackground="#FFF" />
-              <HorizontalTile>
-                <TextTile textClasses={['notification', 'is-success', 'is-padded', 'is-size-4', 'is-flex', 'is-vertical-center']}>
-                  <p className="has-text-centered subtitle is-3">We do not take on very big projects</p>
-                </TextTile>
-                <TextTile textClasses={['notification', 'is-dark', 'is-padded', 'is-size-6']}>
-                <p style={{marginBottom: '10px'}}>We do not employ project managers, which are needed for big projects</p>
-                  <p>We believe we deliver the best experience for our employees and our customers when we have the same person coding and talking with the customer. Having the same person handling these parts enables the employee to see the problems first hand which motivates him to come up with solution that works in the exact environment the customers works.</p>
-                </TextTile>
-              </HorizontalTile>
-            </VerticalTile>
-          </Tiles>
+          <div className={classname('columns', styles.columns)}>
+            <div className={classname("column", styles.column, styles.left)}>
+              <h3 className="title is-3">How do we win?</h3>
+              <p>There is a lot of companies out there doing great work. Delivering amazing services to both people and other customers. We want to help them do that. We want to make sure that the employees of those companies do their job in the most productive and fulfilling way. We want to make it possible for people to do the things, that can not be done by a computer. We want to ensure that people have the time they need to come up with ideas, get inspired and think big. If we can do that, we have won.</p>
+            </div>
+            <div className={classname("column", styles.column)}>
+              <Img {...topImage} />
+            </div>
+          </div>
+          <div className={classname('columns', styles.columns)}>
+            <div className={classname("column", styles.column, 'is-relative')}>
+              <Img {...middleImage} className='clickable' />
+            </div>
+            <div className={classname("column", styles.column, styles.right)}>
+              <h3 className="title is-3">Nerd at heart</h3>
+              <p>Technology is our passion. We believe that people today have a unique opportunity to use technology to their advantage to a larger degree than they already do. Most of the things that are being done today leverage technology in one way or another. We believe that by pairing our understanding of technology and our customers specialized business understanding we can make magic happen.</p>
+              <p style={{textAlign: 'right', marginTop: '10px'}}>- Rick Marker, Founder</p>
+            </div>
+          </div>
+          <div className={classname('columns', styles.columns)}>
+            <div className={classname("column", styles.column, styles.left)}>
+              <h3 className="title is-3">Small but powerful</h3>
+              <p>There are a lot of things that can be done to help companies. We focus on the smaller projects. Typically less than 1 month. We believe that by primarily engaging in smaller projects, we can remove a lot of the overhead that bigger projects entail. We do not want an internal project manager. We want to be out there with our client, experiencing the issues they have and come up with a solution together. We believe that by being familar with the issues we try to solve yields better results. That benefits our clients and ourselves.</p>
+            </div>
+            <div className={classname("column", styles.column)}>
+              <Img {...robot} />
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
   )
 }
 
-export default Contact
+export default AboutInterops

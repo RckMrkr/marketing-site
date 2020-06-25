@@ -12,7 +12,7 @@ const encode = (data) => {
       .join("&");
 }
 
-const validateEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test
+const validateEmail = email => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
 export default ({from}) => {
   const {
