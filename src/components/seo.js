@@ -10,8 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ description, lang, meta, title, image }) {
+  const { site, allFile } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,6 +19,13 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+          }
+        },
+        allFile(filter: { relativePath: { eq: "interops-logo-black.png" } }) {
+          edges {
+            node {
+              publicURL
+            }
           }
         }
       }
@@ -50,6 +57,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: allFile.edges[0].node.publicURL,
         },
         {
           name: `twitter:card`,
