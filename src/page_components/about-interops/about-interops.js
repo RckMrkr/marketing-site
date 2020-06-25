@@ -31,7 +31,6 @@ const AboutInterops = ({ location }) => {
             <div className={classname("column", styles.column, styles.right)}>
               <h3 className="title is-3">Nerd at heart</h3>
               <p>Technology is our passion. We believe that people today have a unique opportunity to use technology to their advantage to a larger degree than they already do. Most of the things that are being done today leverage technology in one way or another. We believe that by pairing our understanding of technology and our customers specialized business understanding we can make magic happen.</p>
-              <p style={{textAlign: 'right', marginTop: '10px'}}>- Rick Marker, Founder</p>
             </div>
           </div>
           <div className={classname('columns', styles.columns)}>

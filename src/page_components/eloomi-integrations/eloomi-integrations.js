@@ -1,13 +1,8 @@
 import React from "react"
 import Layout from "../../components/layout"
 import useEloomiIntegrations from './hooks';
-import Tiles from '../../components/tiles'
-import TextTile from "../../components/textTile";
-import ImageTile from "../../components/imageTile";
-import Slider from '../../components/slider';
 import Pricing from './components/pricing';
 import SideBySide from './../../components/side-by-side'
-import useFrontpage from '../frontpage/hooks'
 import {Link as ScrollLink} from 'react-scroll'
 import classname from 'classname';
 import Img from 'gatsby-image';

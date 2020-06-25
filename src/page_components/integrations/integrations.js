@@ -86,22 +86,6 @@ const Integrations = ({ location }) => {
               </div>
             </div>
           </div>
-
-
-
-
-
-            {/* <Tiles>
-                <p className="has-text-centered subtitle is-3">If you have a lot of time to copy data between systems and always do it without error, feel free to move on. If not: Read on.</p>
-                <p className='is-size-4'>If the system you usually update can expose the data in a secure and predictable way, you can start being creative with what you want to do.<br />
-              
-                <Progress />
-            </Tiles>
-            <Tiles>
-              <ImageTile imageProps={{...dataImage, style:{ width: '100%'}}} imageBackground='#FFF' />
-                If the receiving end allows inserting or updating data, you can make some very powerful integrations.</p>
-            </Tiles>
-          </div> */}
         </section>
         <section className="section has-background-white" style={{paddingLeft: 0, paddingRight: '15px'}}>
             <h4 className="title has-text-centered">Some of the systems we have experience with</h4>
