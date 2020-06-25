@@ -42,8 +42,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && gatsby build --prefix-paths && npm run move",
-    "move": "cd public && mkdir wip && mv *[^wip]* wip",
+    "build": "npm run clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
