@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `InterOps`,
+    siteUrl: `https://www.interops.io`,
     description: `Here to help with any technology obstacle you may face`,
     author: `InterOps`,
     contactScrollElementName: 'contactScrollName',

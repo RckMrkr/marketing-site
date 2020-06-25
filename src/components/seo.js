@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title, image }) {
             title
             description
             author
+            siteUrl
           }
         },
         allFile(filter: { relativePath: { eq: "interops-logo-black.png" } }) {
@@ -60,7 +61,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           property: `og:image`,
-          content: allFile.edges[0].node.publicURL,
+          content: `${site.siteMetadata.siteUrl}${allFile.edges[0].node.publicURL}`,
         },
         {
           name: `twitter:card`,
