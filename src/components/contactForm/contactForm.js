@@ -91,7 +91,7 @@ export default ({from}) => {
                       <p className="control has-text-centered">
                         { !isSubmitting
                           ? <Button type='warning'>Send</Button>
-                          : <Button disabled type='warning'>Send</Button>
+                          : <Button disabled type='warning'>Reach out</Button>
                         }
                       </p>
                     </div>

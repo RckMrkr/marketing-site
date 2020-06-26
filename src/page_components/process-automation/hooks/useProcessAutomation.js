@@ -22,7 +22,7 @@ export default () => {
             }
           }
         },
-        screensharing: file(relativePath: { eq: "process-automation/screensharing.webp" }) {
+        screensharing: file(relativePath: { eq: "process-automation/screensharing.jpg" }) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 552) {
               ...GatsbyImageSharpFluid_withWebp

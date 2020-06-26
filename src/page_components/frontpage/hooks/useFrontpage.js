@@ -11,7 +11,7 @@ export default () => {
             }
           }
         },
-        backImage: file(relativePath: { eq: "frontpage/back-image.webp" }) {
+        backImage: file(relativePath: { eq: "frontpage/back-image.jpg" }) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 480) {
               ...GatsbyImageSharpFluid

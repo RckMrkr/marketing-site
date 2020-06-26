@@ -88,7 +88,7 @@ const Integrations = ({ location }) => {
           </div>
         </section>
         <section className="section has-background-white" style={{paddingLeft: 0, paddingRight: '15px'}}>
-            <h4 className="title has-text-centered">Some of the systems we have experience with</h4>
+            <h4 className="title has-text-centered">Some of the systems we work with</h4>
             <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
               {pageIsVisible && <Ticker speed={3} move={!isHovered} direction='toRight' offset="100%">
                 {
