@@ -1,4 +1,4 @@
-import React from 'react';
-import Contact from './../page_components/contact'
+import React from "react"
+import Contact from "./../page_components/contact"
 
-export default (props) => <Contact {...props} />
+export default props => <Contact {...props} />

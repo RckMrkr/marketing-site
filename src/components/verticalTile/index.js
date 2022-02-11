@@ -1,1 +1,1 @@
-export { default } from './verticalTile'
+export { default } from "./verticalTile"

@@ -1,1 +1,1 @@
-export { default } from './useFrontpage'
+export { default } from "./useFrontpage"

@@ -21,7 +21,7 @@ function SEO({ description, lang, meta, title, image }) {
             author
             siteUrl
           }
-        },
+        }
         allFile(filter: { relativePath: { eq: "interops-logo-black.png" } }) {
           edges {
             node {

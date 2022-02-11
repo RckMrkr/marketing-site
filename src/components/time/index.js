@@ -1,1 +1,1 @@
-export { default } from './time'
+export { default } from "./time"

@@ -1,30 +1,40 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby"
 
 export default () => {
-  const { eloomiPartnershipBackground, whatWeBelieveBackground, eloomiScreenshot } = useStaticQuery(
+  const {
+    eloomiPartnershipBackground,
+    whatWeBelieveBackground,
+    eloomiScreenshot,
+  } = useStaticQuery(
     graphql`
       query {
-        eloomiPartnershipBackground: file(relativePath: { eq: "frontpage/eloomi-partnership-background.png" }) {
+        eloomiPartnershipBackground: file(
+          relativePath: { eq: "frontpage/eloomi-partnership-background.png" }
+        ) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 564) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
-        },
-        whatWeBelieveBackground: file(relativePath: { eq: "frontpage/what-we-believe-background.png" }) {
+        }
+        whatWeBelieveBackground: file(
+          relativePath: { eq: "frontpage/what-we-believe-background.png" }
+        ) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 564) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
-        },
-        eloomiScreenshot: file(relativePath: { eq: "frontpage/eloomi-screenshot.webp" }) {
+        }
+        eloomiScreenshot: file(
+          relativePath: { eq: "frontpage/eloomi-screenshot.webp" }
+        ) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 580) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
-        },
+        }
       }
     `
   )

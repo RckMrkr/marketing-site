@@ -1,11 +1,11 @@
-import useHeaderMenu from './useHeaderMenu'
-import useHeaderImages from './useHeaderImages'
-import { graphql, useStaticQuery } from 'gatsby'
+import useHeaderMenu from "./useHeaderMenu"
+import useHeaderImages from "./useHeaderImages"
+import { graphql, useStaticQuery } from "gatsby"
 
 export default () => {
-  const { mobileMenuIsShown, setMobileMenuIsShown} = useHeaderMenu();
-  const { hero } = useHeaderImages();
-  
+  const { mobileMenuIsShown, setMobileMenuIsShown } = useHeaderMenu()
+  const { hero } = useHeaderImages()
+
   const { site } = useStaticQuery(
     graphql`
       query {

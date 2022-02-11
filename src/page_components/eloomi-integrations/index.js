@@ -1,1 +1,1 @@
-export { default } from './eloomi-integrations'
+export { default } from "./eloomi-integrations"

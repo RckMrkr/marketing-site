@@ -1,1 +1,1 @@
-export { default } from './tiles';
+export { default } from "./tiles"

@@ -1,11 +1,11 @@
-import useTopMenu from './useTopMenu'
-import useTopImages from './useTopImages'
-import { graphql, useStaticQuery } from 'gatsby'
+import useTopMenu from "./useTopMenu"
+import useTopImages from "./useTopImages"
+import { graphql, useStaticQuery } from "gatsby"
 
 export default () => {
-  const { mobileMenuIsShown, setMobileMenuIsShown} = useTopMenu();
-  const { hero } = useTopImages();
-  
+  const { mobileMenuIsShown, setMobileMenuIsShown } = useTopMenu()
+  const { hero } = useTopImages()
+
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -17,7 +17,7 @@ export default () => {
       }
     `
   )
-  
+
   return {
     mobileMenuIsShown,
     setMobileMenuIsShown,

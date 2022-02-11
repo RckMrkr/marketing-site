@@ -1,34 +1,52 @@
-import React from 'react'
-import styles from './examples.module.scss';
-import classname from 'classname';
-import Slider from '../../../../components/slider';
+import React from "react"
+import * as styles from "./examples.module.scss"
+import classname from "classname"
+import Slider from "../../../../components/slider"
 
 const examples = [
-  ["Every week you have to compile a report that you need to send to your manager so she can bring it to a leadership status meeting. To get the data you need to, not only, access multiple systems, but you also want to make it look nice and coherent so she makes a good impression.", "A small program is created that you can either choose to run manually or that will run at a specified hour. The program will fetch all the required data, do the calculations, set it up nicely and send it to either you, your boss or both of you."],
-  ["Every month your finance department manually goes through a list of payments and identifies who are missing. Once identified they send an email regarding the missing payment and what consequences it will have for them as a customer.", "A small program is created to fetch a list of customers that should have paid and the ones that did pay. The ones that did not pay will be added to a list and displayed to the finance worker running the program. The finance worker now selects who of the customers should get an email, in case there are circumstances the system is not aware of."],
-  ["You are monitoring your companys many backup systems and have a way to verify that no errors have occured. All you have to do is check that nothing is red on the screen. It is easy, but this part is also easy to forget when you have other things to do.", "A small piece of code could be running on a server, checking the status at 1 minute intervals, notifying you the moment something has turned red. The notification would then give you information about which backup failed and when, so you can start troubleshooting immediately."],
-  ["When people join the company, it is your job to make sure they get a user in all your systems with an appropriate email address and that the manager gets the initial login credentials.", "A small program is created that asks for the relevant info (name, email, department, title) and creates the user in all the systems she needs access to. Perhaps even sets permission levels correctly based on titles or department. At the end the manager is notified so she can ensure a quick onboarding."],
+  [
+    "Every week you have to compile a report that you need to send to your manager so she can bring it to a leadership status meeting. To get the data you need to, not only, access multiple systems, but you also want to make it look nice and coherent so she makes a good impression.",
+    "A small program is created that you can either choose to run manually or that will run at a specified hour. The program will fetch all the required data, do the calculations, set it up nicely and send it to either you, your boss or both of you.",
+  ],
+  [
+    "Every month your finance department manually goes through a list of payments and identifies who are missing. Once identified they send an email regarding the missing payment and what consequences it will have for them as a customer.",
+    "A small program is created to fetch a list of customers that should have paid and the ones that did pay. The ones that did not pay will be added to a list and displayed to the finance worker running the program. The finance worker now selects who of the customers should get an email, in case there are circumstances the system is not aware of.",
+  ],
+  [
+    "You are monitoring your companys many backup systems and have a way to verify that no errors have occured. All you have to do is check that nothing is red on the screen. It is easy, but this part is also easy to forget when you have other things to do.",
+    "A small piece of code could be running on a server, checking the status at 1 minute intervals, notifying you the moment something has turned red. The notification would then give you information about which backup failed and when, so you can start troubleshooting immediately.",
+  ],
+  [
+    "When people join the company, it is your job to make sure they get a user in all your systems with an appropriate email address and that the manager gets the initial login credentials.",
+    "A small program is created that asks for the relevant info (name, email, department, title) and creates the user in all the systems she needs access to. Perhaps even sets permission levels correctly based on titles or department. At the end the manager is notified so she can ensure a quick onboarding.",
+  ],
 ]
 
 export default ({ showModal, setShowModal }) => (
-  <div className={classname('modal', { 'is-active': showModal })}>
-    <div className="modal-background" role="button" onClick={() => setShowModal(false)}></div>
+  <div className={classname("modal", { "is-active": showModal })}>
+    <div
+      className="modal-background"
+      role="button"
+      onClick={() => setShowModal(false)}
+    ></div>
     <div className={classname("modal-content", styles.content)}>
-        { showModal &&
-          <Slider duration={200} infinite={false}>
-            {
-              examples.flat().map((text, index) => {
-                const title = index % 2 === 0 ? 'Problem' : 'Solution'
-                return (
-                  <div className='slide' key={`${index}-problem`}>
-                    <h2 className={classname("subtitle no-margin is-3", styles.title)}>{title} {Math.floor(index / 2) + 1}</h2>
-                    <div>{text}</div>
-                  </div>
-                )
-              })
-            }
-          </Slider>
-        }
+      {showModal && (
+        <Slider duration={200} infinite={false}>
+          {examples.flat().map((text, index) => {
+            const title = index % 2 === 0 ? "Problem" : "Solution"
+            return (
+              <div className="slide" key={`${index}-problem`}>
+                <h2
+                  className={classname("subtitle no-margin is-3", styles.title)}
+                >
+                  {title} {Math.floor(index / 2) + 1}
+                </h2>
+                <div>{text}</div>
+              </div>
+            )
+          })}
+        </Slider>
+      )}
     </div>
     <button className="modal-close is-large" aria-label="close"></button>
   </div>

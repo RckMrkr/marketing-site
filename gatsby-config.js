@@ -4,28 +4,28 @@ module.exports = {
     siteUrl: `https://www.interops.io`,
     description: `Here to help with any technology obstacle you may face`,
     author: `InterOps`,
-    contactScrollElementName: 'contactScrollName',
+    contactScrollElementName: "contactScrollName",
     defaultCurrency: "Euro",
     prices: {
       migration: {
-        "DKK": 850,
-        "Dollars": 130,
-        "Euro": 115,
+        DKK: 850,
+        Dollars: 130,
+        Euro: 115,
       },
       integration: {
-        "DKK": 29500,
-        "Dollars": 4280,
-        "Euro": 3950,
+        DKK: 29500,
+        Dollars: 4280,
+        Euro: 3950,
       },
       monitoring: {
-        "DKK": 9500,
-        "Dollars": 1450,
-        "Euro": 1275,
-      }
+        DKK: 9500,
+        Dollars: 1450,
+        Euro: 1275,
+      },
     },
   },
-  
-  pathPrefix: '/wip',
+
+  pathPrefix: "/wip",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -59,16 +59,21 @@ module.exports = {
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
-        features: [`fetch`, `Array.prototype.flat`, `Array.prototype.map`, `String.prototype.repeat`]
+        features: [
+          `fetch`,
+          `Array.prototype.flat`,
+          `Array.prototype.map`,
+          `String.prototype.repeat`,
+        ],
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /\.inline\.svg$/
-        }
-      }
+          include: /\.inline\.svg$/,
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -83,20 +88,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Barlow`,
-            variants: [`400`, `600`, `700`]
-          },
-          {
-            family: `Roboto`,
-            variants: [`400`, `700`, `italic` ]
-          },
+          `Barlow\:400,600,700`,
+          `Roboto\:400,700,italic`
         ],
+        display: 'swap'
       },
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

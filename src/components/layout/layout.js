@@ -6,11 +6,11 @@
  */
 
 import React from "react"
-import Footer from '../footer';
+import Footer from "../footer"
 import Header from "./components/header"
-import ContactForm from './../contactForm'
+import ContactForm from "./../contactForm"
 
-const Layout = ({children, ...props}) => {
+const Layout = ({ children, ...props }) => {
   return (
     <>
       <Header {...props} />
@@ -20,6 +20,5 @@ const Layout = ({children, ...props}) => {
     </>
   )
 }
-
 
 export default Layout

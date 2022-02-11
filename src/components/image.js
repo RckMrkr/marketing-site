@@ -26,7 +26,14 @@ const Image = () => {
     }
   `)
 
-  return <Img fadeIn draggable loading='eager' fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <Img
+      fadeIn
+      draggable
+      loading="eager"
+      fluid={data.placeholderImage.childImageSharp.fluid}
+    />
+  )
 }
 
 export default Image

@@ -1,1 +1,1 @@
-export { default } from './textTile'
+export { default } from "./textTile"

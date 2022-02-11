@@ -1,9 +1,12 @@
 import { useStaticQuery, graphql } from "gatsby"
-import { useState } from "react";
+import { useState } from "react"
 
 export default () => {
-
-  const { site: {siteMetadata: {prices, defaultCurrency}} } = useStaticQuery(
+  const {
+    site: {
+      siteMetadata: { prices, defaultCurrency },
+    },
+  } = useStaticQuery(
     graphql`
       query {
         site {
@@ -28,12 +31,11 @@ export default () => {
             }
           }
         }
-      }      
+      }
     `
-  );
+  )
 
-  const [currency, setCurrency] = useState(defaultCurrency);
+  const [currency, setCurrency] = useState(defaultCurrency)
 
-  return { prices, currency, setCurrency };
-
+  return { prices, currency, setCurrency }
 }

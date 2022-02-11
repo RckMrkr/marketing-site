@@ -1,1 +1,1 @@
-export { default } from './useEloomiIntegrations'
+export { default } from "./useEloomiIntegrations"

@@ -66,9 +66,8 @@
     position: absolute;
     bottom: 10%;
     color: #FFF;
-    left: 50%;
+    text-align: center;
     width: 100%;
-    transform: translate(-50%);
     .title {
       font-weight: bold;
       font-size: 48px;
@@ -151,21 +150,21 @@
       left: 8px;
     }
     span:nth-child(1) {
-      $test: (3 * $slice-height + 2 * $slice-space) / 2;
+      $test: calc((3 * $slice-height + 2 * $slice-space) / 2);
       top: calc(50% - #{$test});
       &.is-active {
           transform: translateY(8px) rotate(45deg);
       }
     }
     span:nth-child(2) {
-      $test: $slice-height / 2;
+      $test: calc($slice-height / 2);
       top: calc(50% - #{$test});
       &.is-active {
           opacity: 0;
       }
     }
     span:nth-child(3) {
-      $test: (3 * $slice-height + 2 * $slice-space) / 2 - $slice-height;
+      $test: calc((3 * $slice-height + 2 * $slice-space) / 2 - $slice-height);
       top: calc(50% + #{$test});
       &.is-active {
           transform: translateY(-8px) rotate(-45deg);

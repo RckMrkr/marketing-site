@@ -1,1 +1,1 @@
-export { default } from './useAboutInterOps'
+export { default } from "./useAboutInterOps"

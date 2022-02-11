@@ -1,1 +1,1 @@
-export { default } from './side-by-side'
+export { default } from "./side-by-side"

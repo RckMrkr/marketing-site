@@ -1,1 +1,1 @@
-export { default } from './imageTile'
+export { default } from "./imageTile"

@@ -1,1 +1,1 @@
-export { default } from './useIntegrations'
+export { default } from "./useIntegrations"

@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby"
 
 export default () => {
   const { hero } = useStaticQuery(
@@ -16,6 +16,6 @@ export default () => {
   )
 
   return {
-    hero: {fluid: hero.childImageSharp.fluid },
+    hero: { fluid: hero.childImageSharp.fluid },
   }
 }

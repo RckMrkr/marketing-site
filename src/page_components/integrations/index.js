@@ -1,1 +1,1 @@
-export { default } from './integrations'
+export { default } from "./integrations"
