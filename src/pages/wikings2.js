@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 import GuideScreenshot from "../page_components/wikings/guide-screenshot"
+import redBorder from "../images/wikings/Red_Border.png"
 import * as styles from "../page_components/wikings/wikings.module.scss"
 
 const logoUrl =
@@ -321,6 +322,14 @@ export default () => (
                 2. <code>Player 1</code> til <code>Player 16</code>
                 <br />
                 3. <code>Club_Logo</code>
+                <br />
+                <a
+                  href={redBorder}
+                  className={styles.btnDownload}
+                  download="Red_Border.png"
+                >
+                  Download Red Border PNG
+                </a>
               </td>
               <td>
                 Dynamiske thumbnails til Hero_12 og Hero_8. (Dupliker op til 12

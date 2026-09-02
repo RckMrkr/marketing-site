@@ -1,6 +1,8 @@
 import React from "react"
 import SEO from "../components/seo"
 import GuideScreenshot from "../page_components/wikings/guide-screenshot"
+import ndiSettings from "../images/wikings/ndi-settings.png"
+import streamingSettings from "../images/wikings/streaming-settings.png"
 import * as styles from "../page_components/wikings/wikings.module.scss"
 
 const logoUrl =
@@ -135,6 +137,7 @@ export default () => (
             </ul>
 
             <GuideScreenshot
+              src={streamingSettings}
               className={styles.screenshotBox}
               alt="screenshot af video indstillinger"
             />
@@ -196,6 +199,7 @@ export default () => (
             </ul>
 
             <GuideScreenshot
+              src={ndiSettings}
               className={styles.screenshotBox}
               alt="screenshot af NDI output"
             />
