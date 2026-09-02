@@ -11,6 +11,7 @@ export default () => (
     <SEO
       title="Wikings Esport | Opsætningsguide: Spiller PC"
       description="Opsætningsguide til Wikings Esport Fortnite NDI-Broadcast System."
+      lang="da"
     />
     <div className={styles.container}>
       <header className={styles.header}>

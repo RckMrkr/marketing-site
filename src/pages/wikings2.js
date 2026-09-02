@@ -153,6 +153,7 @@ export default () => (
     <SEO
       title="Wikings Esport | Opsætningsguide: Koordinator PC"
       description="Opsætningsguide til Wikings Esport Fortnite Broadcast Master Control."
+      lang="da"
     />
     <div className={styles.container}>
       <header className={styles.header}>
