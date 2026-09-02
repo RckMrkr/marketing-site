@@ -1,12 +1,25 @@
 import React from "react"
 import SEO from "../components/seo"
 import GuideScreenshot from "../page_components/wikings/guide-screenshot"
+import PlayerMacroGenerator from "../page_components/wikings/player-macro-generator"
 import redBorder from "../images/wikings/Red_Border.png"
 import logo from "../images/wikings/logo.png"
 import * as styles from "../page_components/wikings/wikings.module.scss"
 
 const logoUrl =
   "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/sites/174106/images/JXD1FPQZQ8GY4ehf4iPu_website_logo_transparent_background.png"
+
+const lobbyCheckMacro = `IF Video > Pattern Matching (PlayerX) matches "Lobby_TopBar_Crop.png" (> 80%)
+THEN Set Variable "PlayerX_InLobby" = 1
+ELSE Set Variable "PlayerX_InLobby" = 0`
+
+const combatDetectionMacro = `IF Variable "PlayerX_InLobby" == 0
+AND Video > Motion Detection (PlayerX) > 25% (Area: Midterste 30%)
+AND Audio > Volume (PlayerX) > -10 dB
+THEN
+ Set Variable "PlayerX_InCombat" = 1
+ Wait 15 seconds
+ Set Variable "PlayerX_InCombat" = 0`
 
 const broadcasterEngine = `-- ===================================================================
 -- AUTOMATED FORTNITE BROADCAST ENGINE (OFFICIAL OBS LUA API)
@@ -524,27 +537,19 @@ export default () => (
           Opdager om spilleren er i Hovedmenuen via billedgenkendelse på
           `Lobby_TopBar_Crop.png`.
         </p>
-        <div className={styles.macroBlock}>
-          <strong>IF</strong> Video &gt; Pattern Matching (Player 1) matches
-          &quot;Lobby_TopBar_Crop.png&quot; (&gt; 80%){"\n"}
-          <strong>THEN</strong> Set Variable &quot;Player1_InLobby&quot; = 1
-          {"\n"}
-          <strong>ELSE</strong> Set Variable &quot;Player1_InLobby&quot; = 0
-        </div>
+        <PlayerMacroGenerator
+          label="Lobby Check makro"
+          template={lobbyCheckMacro}
+        />
 
         <h3 className={styles.coordinatorHeading}>
           Kamp Detektion (Opret for Player 1..16)
         </h3>
         <p>Opdager action baseret på pludselig larm og kamerabevægelse.</p>
-        <div className={styles.macroBlock}>
-          <strong>IF</strong> Variable &quot;Player1_InLobby&quot; == 0{"\n"}
-          <strong>AND</strong> Video &gt; Motion Detection (Player 1) &gt; 25%
-          (Area: Midterste 30%){"\n"}
-          <strong>AND</strong> Audio &gt; Volume (Player 1) &gt; -10 dB{"\n"}
-          <strong>THEN</strong>
-          {"\n"} Set Variable &quot;Player1_InCombat&quot; = 1{"\n"} Wait 15
-          seconds{"\n"} Set Variable &quot;Player1_InCombat&quot; = 0
-        </div>
+        <PlayerMacroGenerator
+          label="Kamp Detektion makro"
+          template={combatDetectionMacro}
+        />
 
         <h3 className={styles.coordinatorHeading}>
           Layout Switcher (Opret én gang)
@@ -596,14 +601,12 @@ export default () => (
       <section id="spillernavne">
         <h2>7. Håndtering af Spillernavne (Gamertags) på Dagen</h2>
         <p>
-          For at opdatere de navneskilte, der vises på live-streamen
-          (<code>Hero_Tag_Text</code> og <code>Slot1..4_Tag_Text</code>),
-          skal koordinatoren blot indtaste dagens navne direkte i OBS:
+          For at opdatere de navneskilte, der vises på live-streamen (
+          <code>Hero_Tag_Text</code> og <code>Slot1..4_Tag_Text</code>), skal
+          koordinatoren blot indtaste dagens navne direkte i OBS:
         </p>
         <ol className={styles.stepList}>
-          <li>
-            Åbn OBS Studio på Koordinator-PC&apos;en.
-          </li>
+          <li>Åbn OBS Studio på Koordinator-PC&apos;en.</li>
           <li>
             Gå til topmenuen <code>Værktøjer</code> &rarr; <code>Scripts</code>.
           </li>
@@ -615,9 +618,9 @@ export default () => (
             <code>PC 1 Spiller</code> til <code>PC 16 Spiller</code>).
           </li>
           <li>
-            Indtast spillernes rigtige gamer-tags eller navne. Navneskiltene
-            på streamen opdateres automatisk i realtid, når kamerasystemet
-            skifter rundt!
+            Indtast spillernes rigtige gamer-tags eller navne. Navneskiltene på
+            streamen opdateres automatisk i realtid, når kamerasystemet skifter
+            rundt!
           </li>
         </ol>
         <GuideScreenshot
