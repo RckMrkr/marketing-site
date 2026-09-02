@@ -190,6 +190,59 @@
   user-select: all;
 }
 
+.coordinatorHeading {
+  color: #fff;
+  margin-top: 25px;
+  font-size: 1.2rem;
+}
+
+.coordinatorTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: rgba(2, 6, 23, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+
+  th,
+  td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  th {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: var(--wiking-blue);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.macroBlock {
+  background-color: rgba(2, 6, 23, 0.8);
+  border-left: 4px solid var(--wiking-red);
+  padding: 15px;
+  border-radius: 4px 8px 8px 4px;
+  margin-bottom: 15px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: #cbd5e1;
+
+  strong {
+    color: var(--wiking-blue);
+  }
+}
+
 /* --- SCREENSHOT BOKSE --- */
 .screenshotBox {
   border: 2px dashed var(--wiking-dark-blue);
