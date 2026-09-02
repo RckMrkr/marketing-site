@@ -52,6 +52,11 @@
     text-transform: uppercase;
   }
 
+  strong {
+    color: #fff;
+    font-weight: 700;
+  }
+
   code {
     background-color: var(--code-bg);
     color: #38bdf8;

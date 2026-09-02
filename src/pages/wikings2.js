@@ -4,7 +4,7 @@ import GuideScreenshot from "../page_components/wikings/guide-screenshot"
 import * as styles from "../page_components/wikings/wikings.module.scss"
 
 const logoUrl =
-  "https://static.wixstatic.com/media/2e73f9_98e986c750b3438e818817a0a653bb9f~mv2.png/v1/fill/w_316,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Wikings_logo.png"
+  "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/sites/174106/images/JXD1FPQZQ8GY4ehf4iPu_website_logo_transparent_background.png"
 
 const broadcasterEngine = `-- ===================================================================
 -- AUTOMATED FORTNITE BROADCAST ENGINE (OFFICIAL OBS LUA API)
