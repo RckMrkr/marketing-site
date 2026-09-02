@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import GuideScreenshot from "../page_components/wikings/guide-screenshot"
 import redBorder from "../images/wikings/Red_Border.png"
+import logo from "../images/wikings/logo.png"
 import * as styles from "../page_components/wikings/wikings.module.scss"
 
 const logoUrl =
@@ -15,6 +16,12 @@ local last_idle_switch = 0
 local idle_player_index = 1
 local current_phase = ""
 local hero_thumb_roster = {}
+local player_names = {}
+
+-- Initialiser navne-array
+for i = 1, 16 do
+    player_names[i] = "Player " .. i
+end
 
 function get_var(name, default_val)
     local val = obs.config_get_string(obs.obs_frontend_get_global_config(), "AdvSceneSwitcherVars", name)
@@ -37,6 +44,18 @@ function set_source_visibility(scene_name, source_name, visible)
             end
         end
         obs.obs_source_release(scene_source)
+    end
+end
+
+-- Hjælpefunktion: Opdater tekst i GDI+ / FreeType2 tekstkilde
+function set_text_source(source_name, text_val)
+    local source = obs.obs_get_source_by_name(source_name)
+    if source ~= nil then
+        local settings = obs.obs_data_create()
+        obs.obs_data_set_string(settings, "text", text_val)
+        obs.obs_source_update(source, settings)
+        obs.obs_data_release(settings)
+        obs.obs_source_release(source)
     end
 end
 
@@ -114,11 +133,22 @@ function broadcaster_engine_tick()
     end
     set_var("Hero_Main_Player", active_hero_player)
 
-    -- 4. Opdater Kilder
+    -- 4. Opdater Kilder og Navneskilte
     if active_hero_player > 0 then
         for i = 1, 16 do
             local show_player = (i == active_hero_player)
             set_source_visibility("Hero_Main_Module", "Player " .. i, show_player)
+        end
+        -- Opdater tekst i Hero Tag
+        local h_name = player_names[active_hero_player] or ("Player " .. active_hero_player)
+        set_text_source("Hero_Tag_Text", h_name)
+    end
+
+    -- Opdater Finale-slots navneskilte
+    for s = 1, 4 do
+        local p_idx = alive_players[s]
+        if p_idx then
+            set_text_source("Slot" .. s .. "_Tag_Text", player_names[p_idx] or ("Player " .. p_idx))
         end
     end
 
@@ -142,9 +172,31 @@ function broadcaster_engine_tick()
     end
 end
 
+-- Generer brugerflade i OBS Scripts menuen
+function script_properties()
+    local props = obs.obs_properties_create()
+    obs.obs_properties_add_button(props, "btn_refresh", "--- SPILLERNAVNE / GAMERTAGS ---", nil)
+    for i = 1, 16 do
+        obs.obs_properties_add_text(props, "player_name_" .. i, "PC " .. i .. " Spiller:", obs.OBS_TEXT_DEFAULT)
+    end
+    return props
+end
+
+function script_update(settings)
+    for i = 1, 16 do
+        local val = obs.obs_data_get_string(settings, "player_name_" .. i)
+        if val ~= nil and val ~= "" then
+            player_names[i] = val
+        else
+            player_names[i] = "Player " .. i
+        end
+    end
+end
+
 function script_load(settings)
     obs.timer_add(broadcaster_engine_tick, 500)
 end
+
 function script_unload()
     obs.timer_remove(broadcaster_engine_tick)
 end`
@@ -182,6 +234,7 @@ export default () => (
             <a
               href="https://github.com/WarmUpTill/SceneSwitcher/releases"
               target="_blank"
+              rel="noreferrer"
               className={styles.btnDownload}
             >
               💾 Hent Plugin (GitHub)
@@ -195,6 +248,7 @@ export default () => (
             <a
               href="https://github.com/DistroAV/DistroAV/releases/tag/6.2.1"
               target="_blank"
+              rel="noreferrer"
               className={styles.btnDownload}
             >
               💾 Hent NDI Plugin
@@ -224,7 +278,17 @@ export default () => (
               <td>
                 <code>Club_Logo</code>
               </td>
-              <td>Wikings Logo (Baggrund ved eliminering/pause)</td>
+              <td>
+                Wikings Logo (Baggrund ved eliminering/pause)
+                <br />
+                <a
+                  href={logo}
+                  className={styles.btnDownload}
+                  download="logo.png"
+                >
+                  Download Wikings Logo PNG
+                </a>
+              </td>
             </tr>
             <tr>
               <td>Billede</td>
@@ -428,8 +492,8 @@ export default () => (
       <section id="lua">
         <h2>5. OBS Lua Engine (Hovedhjernen)</h2>
         <p>
-          Dette script håndterer al logik (NDI signal-tjek, karusel-rotation, og
-          den røde ramme). Kørslen sker 2 gange i sekundet.
+          Dette script håndterer al logik (NDI signal-tjek, karusel-rotation,
+          navneopdatering og den røde ramme). Kørslen sker 2 gange i sekundet.
         </p>
         <ol className={styles.stepList}>
           <li>
@@ -526,6 +590,39 @@ export default () => (
         <GuideScreenshot
           className={styles.screenshotBox}
           alt="screenshot af Macro-fanen i Advanced Scene Switcher"
+        />
+      </section>
+
+      <section id="spillernavne">
+        <h2>7. Håndtering af Spillernavne (Gamertags) på Dagen</h2>
+        <p>
+          For at opdatere de navneskilte, der vises på live-streamen
+          (<code>Hero_Tag_Text</code> og <code>Slot1..4_Tag_Text</code>),
+          skal koordinatoren blot indtaste dagens navne direkte i OBS:
+        </p>
+        <ol className={styles.stepList}>
+          <li>
+            Åbn OBS Studio på Koordinator-PC&apos;en.
+          </li>
+          <li>
+            Gå til topmenuen <code>Værktøjer</code> &rarr; <code>Scripts</code>.
+          </li>
+          <li>
+            Klik på <code>broadcaster_engine.lua</code> i listen til venstre.
+          </li>
+          <li>
+            I højre side af vinduet fremkommer der nu 16 tekstfelter (
+            <code>PC 1 Spiller</code> til <code>PC 16 Spiller</code>).
+          </li>
+          <li>
+            Indtast spillernes rigtige gamer-tags eller navne. Navneskiltene
+            på streamen opdateres automatisk i realtid, når kamerasystemet
+            skifter rundt!
+          </li>
+        </ol>
+        <GuideScreenshot
+          className={styles.screenshotBox}
+          alt="screenshot af Scripts vinduet med spillernavne felter"
         />
       </section>
     </div>
